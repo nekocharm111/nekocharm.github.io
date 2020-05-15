@@ -90,141 +90,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-
-
-<h1 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h1><h2 id="一、PHP"><a href="#一、PHP" class="headerlink" title="一、PHP"></a>一、PHP</h2><p>1.什么是PHP？<br>PHP：hypertext preprocessor超文本预处理器的缩写。是一种广泛应用的开源代码的多用途脚本语言，它可嵌入到HTML中。<br>2.PHP的词法结构<br>（1）关键字：同内置结构和关键字一样，用户自定义的类名和函数名都是不区分大小写的。（约定为小写）<br>（2）变量：变量区分大小写。<br>（3）分隔：PHP用分号分割简单语句，复合语句用大括号标记代码块，大括号后不加分号。右括号(?&gt;)前的分号不是必选的。<br>（4）空白：空白符在PHP中无关紧要，可以将一个语句展开成任意行或者紧缩在一行。<br>（5）注释：//单行注释，/**/多行注释，#脚本注释<br>3.环境配置<br>（1）下载appserv<br>(Apache HTTP Server,MySQL Database,PHP Hypertext Preprocessor,phpMyadmin)<br>4.PHP开发工具的选择<br>（1）IDE：Zend Studio<br>（2）工作目录设置为server www文件里。</p>
-<h2 id="二、基本语法"><a href="#二、基本语法" class="headerlink" title="二、基本语法"></a>二、基本语法</h2><p>1.web页面中嵌入PHP代码<br>（1）一般风格<br><code>&lt;?php</code><br><code>echo&quot;&lt;p&gt;hello world! !&lt;/p&gt;&quot;;</code>?&gt;<br>（2）简短风格<br><code>&lt;?echo &quot;&lt;p&gt;hello world!&lt;/p&gt;&quot;;?&gt;</code><br>（3）Script风格</p>
-<p><code>&lt;script language=&quot;php&quot;&gt;echo&quot;&lt;p&gt;hello world!&lt;/p&gt;&quot;;&lt;/script&gt;</code></p>
-<p>（4）ASP风格<br><code>&lt;%echo&quot;&lt;p&gt;hello world!&lt;/p&gt;&quot;;%&gt;</code><br>默认禁止，需修改asp_tags，在PHP.ini中<br>2.标识符<br>（1）标识符是变量的名称。<br>（2）长度任意，由字母数字和下划线组成。<br>（3）不能以数字开头，区分大小写。<br>（4）一个变量名称可以与一个函数名相同。<br>3.变量<br>（1）直接使用，不需定义。$a=0;$b=1.22;$a=$b;<br>（2）变量的数据类型：整型，浮点型，字符串型，布尔型，数组，对象。<br>（3）PHP是弱类型语言，变量类型由赋值时确定。<br>（4）类型转换：$sum=0;$total=(float)$sum;<br>4.检测变量<br>（1）gettype()、settype()函数返回string类型，也就是变量的类型字符串。gettype($变量名)，settype($变量名，需要设置的类型名)。<br>（2）isset()和unset()来判断一个变量是否存在，返回布尔值。<br>（3）empty()用来判断一个变量的值是否为空，为空则为true。” “、0、”0”、NULL、FALSE、array()、var $var以及没有任何属性的对象都将被认为是空。<br>5.常量<br>（1）一旦定义就不可修改。<br>（2）define(“常量名”，值)；<br>（3）运行phpinfo()来了解预定义常量。<br>（4）常量只可以保存标量。</p>
-<h2 id="三、访问表单变量"><a href="#三、访问表单变量" class="headerlink" title="三、访问表单变量"></a>三、访问表单变量</h2><p>0.在PHP脚本中，可以以PHP变量的形式访问每一个表单域，其中PHP变量名称必须与表单域的名称一致。PHP变量都是以$符号开始。<br>1.简短风格：方便但易引起混淆。<br><code>$userName</code><br>2.中等风格：4.1.0版后支持，推荐。<br><code>$_POST[&quot;userName&quot;];$_Get[&quot;QQName&quot;];</code><br>3.冗长风格：最详细，但已经过时。<br><code>$HTTP_POST_VARS[&quot;userName&quot;]</code></p>
-<h2 id="四、运算符与结构"><a href="#四、运算符与结构" class="headerlink" title="四、运算符与结构"></a>四、运算符与结构</h2><p>1.字符串插入<br>（1）双引号字符：最灵活，双引号里的变量和转义序列都会被解析。<br><code>&lt;?php
-$userName=&quot;小明&quot;;
-echo &quot;His name is $userName&quot;;
-echo&quot;&lt;br/&gt;&quot;;
-//中文会出现一些问题
-echo &quot;他是$userName,他爱玩游戏！&quot;;//他是之后的内容无法显示。
-//echo &quot;他是&quot;.$userName.&quot;他爱玩游戏！&quot;;
-//用.作为连接符
-echo &quot;&lt;br/&gt;&quot;;
-//转义字符可以得到解析
-echo &quot;他有很多\&quot;好朋友\&quot;&quot;;
-?&gt;</code><br>（2）单引号字符串：按照声明的原样解释，变量和转义序列都不会被解析。<br><code>&lt;?php
-echo &#39;他的名字为$userName&#39;//在单引号中无效
-?&gt;</code><br>2.操作符<br>（1）算术操作符：+,-,<em>,/,%.+=,-=,</em>=,.=等等。<br>（2）比较运算符：==,===,!=,!===,&lt;&gt;,&gt;=,&gt;,&lt;,&lt;=<br>*：===除了比较值，还要比较数据类型。<br>（3）逻辑运算符：!,&amp;&amp;,||,and,or<br>*：（and及or的优先级低于&amp;&amp;和||）<br>3.控制结构<br>（1）if语句，if-else语句，if-else if语句。<br>（2）switch语句。<br>（3）while循环，for循环、do-while循环。</p>
-<h2 id="五、常用数字运算"><a href="#五、常用数字运算" class="headerlink" title="五、常用数字运算"></a>五、常用数字运算</h2><p>1.数值数据类型<br>（1）计算中包含数值和字符串时，字符串会在计算完成之前转换为数值，而数值则会在与字符串连接之前转换为字符串。<br><code>&lt;?php
-$a=&#39;5&#39;;$b=7+$a;
-echo &quot;$b&quot;;
-?&gt;</code><br>//显示结果为12，字符串类型<br>（2）有3个函数检查变量是否包含一个数字值<br>is_numeric()：检查作为参数传入的值是否为数值。<br>is_int()和is_float()：检查传入数值的具体数据类型。包含合法数值的字符串也会返回FALSE。<br>（3）强制类型转换：可以在变量前加(类型名)，或者利用floatval()和intval()函数。<br>2.随机数<br>（1）两种随机数生成器：rand()和mt_rand()。<br>（2）两个函数得到MAX_RAND：getrandmax()和mt_getrandmax()。<br>（3）rand()：生成0<del>max之间的数，rand(5,80)：随机生成5</del>80之间的数。（mt_rand()类似）<br>3.格式化数据输出<br>（1）echo（print）：echo “待输出字符串”<br>（2）printf()：与C的格式化输出函数一致。<br>（3）number_format()：可以把整数和浮点数值转换为一种可读的字符串表示。<br>number_format(number,decimals,decimalpoint,separator)<br>number:必要，要格式化的数字，如果未设置其他参数，则数字会被转化为不带小数点且以逗号作为分隔符。<br>decimals:可选，规定多少个小数。如果设置了该参数，则使用点号作为小数点来格式化数字。<br>decimalpoint:可选，规定用作小数点的字符串。<br>separator:可选，规定用作千位分隔符的字符串。仅使用该参数的第一个字符。如果设置了该参数，那么所有其他参数都是必要的。<br><code>&lt;?php
-$i=123456;
-$si=number_format($i,2,&quot;.&quot;,&quot;,&quot;);
-echo $si;
-?&gt;</code><br><code>//显示效果：123，456.00</code><br>4.数学函数<br>（1）abs()绝对值函数<br>（2）floor()向下取整<br>（3）ceil()向上取整<br>（4）round()四舍五入取整<br>（5）min()/max()求数组或数的最小最大值</p>
-<h2 id="六、数组"><a href="#六、数组" class="headerlink" title="六、数组"></a>六、数组</h2><p>1.数组：一组有某种共同特性的元素，包括相似性和类型。每个元素由一个特殊的标识符区分，称之为键(key)，而每个键对应一个值(value)。<br>2.创建一个数组：<br>①通过array()函数创建一个数组。$fruit=array(‘apple’,’pear’,’orange’);这是索引数组的初始化，数字索引的值由0开始。<br>②通过range()自动创建一个数组。range(区间左端点,区间右端点,步长可选)。<code>$numbers=range(1,10);$letters=range(&#39;a&#39;,&#39;z&#39;,2);</code><br>2.访问数组的内容<br>①变量名和索引：$numbers[0];<br>②遍历数组：foreach()依次取出数组中的一个元素<br>③测试是否是数组：is_array()<br>④print_r：打印关于变量的易于理解的信息。<br>3.自定义键数组<br>①$count=array(‘apple’=&gt;5,’banana’=&gt;6,’orange’=&gt;7)<br>②追加数组：$count[‘apple’];$count[‘pear’]=8;<br>可以使用foreach()和each()结构遍历自定义数组。<br><code>foreach($ages as $key=&gt;$value){
-echo $key.&quot;=&gt;&quot;.$value.&quot;&lt;br/&gt;&quot;;
-}
-each()函数返回数组的当前元素，并将下一个元素作为当前元素。
-while(!!$element=each($ages)){
-echo $element[&quot;key&quot;];
-echo &quot;=&gt;&quot;;
-echo $element[&quot;value&quot;];
-echo &quot;&lt;br/&gt;&quot;
-}</code><br>4.数组的嵌套<br>（1）<br><code>$products=array(
-array(&quot;apple&quot;,4,6.3),
-array(&quot;pear&quot;,5,2.3)
-);</code><br>$products[0][0]来访问数组元素，或者双重循环。<br>5.数组的排序<br>（1）sort()按数字升序或字母升序进行排序。第二个参数为可选项，SORT_REGULAR(默认值)、SORT_NUMERIC或SORT_STRING来指定排序内容。<br>（2）asort()按value进行排序，ksort()按照key进行排序。<br>（3）反向排序相应函数：rsort(),arsort(),krsort()<br>（4）shuffle()将数组元素进行随机排序，array_reverse()给出一个原来数组的反向排序。<br>6.数组的指针操作<br>（1）each()会在指针前移一个单位之前返回当前元素<br>（2）next()先将指针前移再返回新的元素。<br>（3）prev()/pos()先将指针回移再返回新的元素。<br>（4）current()返回当前指针所指元素。<br>（5）reset()将指针复位到第一个元素。<br>（6）end()将指针指向最后一个元素。<br>7.统计数组元素的个数<br>（1）count()/sizeof():数组中值出现的个数，与下标无关。<br>（2）array_count_values:统计数组中所有元素分别出现的次数。返回一个自定义数组。<br>8.将数组转换为标量变量<br>（1）对于非数字索引数组，有许多关键字-值对，可以使用extract()将他们转换成一系列标量变量。<br>（2）extract()创建的一系列变量，这些变量的名称是数组的索引关键字，值则是对应的值。<br><code>$array=array(&quot;key&quot;1=&gt;&quot;value1,&quot;key2&quot;=&gt;&quot;value2&quot;);
-echo $key1,$key2;</code><br>（3）第二个参数是处理数组的方式。</p>
-<h2 id="七、文件操作"><a href="#七、文件操作" class="headerlink" title="七、文件操作"></a>七、文件操作</h2><p>1.目录操作<br>（1）basename()：返回路径的文件名。<br><code>&lt;?php
-$path=&#39;C:\AppServ\www\Basic6\Demo1.php&#39;;
-echo &#39;path:&#39;.basename($path);
-?&gt;
-//Demol1.php</code><br>（2）dirname()：返回路径目录部分。<br><code>&lt;?php
-$path=&#39;C:\AppServ\www\Basic6\Demo1.php&#39;;
-echo &#39;path:&#39;.dirname($path);
-?&gt;
-//C:\AppServ\www\Basic6</code><br>（3）pathinfo():以数组形式返回路径的全部信息。<br><code>&lt;?php
-$path=&#39;C:\AppServ\www\Basic6\Demo1.php&#39;;
-$array_path=pathinfo($path);
-print_r($array_path);
-?&gt;
-//Array([dirname]=&gt;C:\AppServ\www\Basic6 [basename]=&gt;Demo1.php [extension]=&gt;php [filename]=&gt;Demo1)</code><br>（3）realpath()：确定绝对路径。realpath()将path中的所有符号链接和相对路径引用转换为相应的硬链接和绝对路径。<br><code>$path=&#39;../index.php&#39;;
-echo realpath($path);
-//C:\AppServ\www\index.php</code><br>2.磁盘、目录和文件计算<br>（1）filesize()函数：返回文件的字节大小。<br><code>&lt;?php
-$file=&#39;C:\AppServ\www\Basic6\Demo1.php&#39;;
-echo round(filesize($file)/1024,2).&#39;KB&#39;;
-?&gt;</code><br>(2)disk_free_space()：计算磁盘可用空间。<br><code>$drive=&#39;C:&#39;;</code><br><code>echo round(disk_free_space($drive)/1024/1024,2).&#39;MB&#39;;</code><br>（3）disk_total_space()：计算磁盘总空间。<br><code>$drive=&#39;C:&#39;;
-echo round(disk_total_space($drive)/1024/1024,2).&#39;MB&#39;;</code><br>（4）filename()函数返回文件最后访问时间，采用Unix时间格式。<br><code>$file=&#39;C:\AppServ\www\Basic6\Demo1.php&#39;;
-echo date(&quot;Y-m-d,h:i:s&quot;,filetime($file));</code><br>（5）filesettime()返回文件最后改变时间。<br>（6）filemtime()返回最后内容修改时间。<br>3.文件处理<br>（1）将数据写入一个文件有3步：<br>第一步：打开这个文件。如果文件不存在，就先创建。<br>第二步：将数据写入这个文件。<br>第三步：关闭这个文件。<br>同样，从文件中读取数据也有3步：<br>第一步：打开这个文件。如果文件打不开，就该退出。<br>第二步：从文件中读出数据。<br>第三步：关闭这个文件。<br>（2）fopen()函数打开文件。<br>fopen(文件路径,文件模式,[是否在include_path中搜索一个文件],[允许文件名以协议名称开始])<br>（3）fwrite()和fputs()函数写文件。<br>fwrite($fp,$outputstring,[length])，length为最大写入长度，可用strlen()函数获得字符串长度。<br>（4）读文件的函数：<br>fgetc():读出一个字符，并将指针移到下一个字符。<br>fgets():读出一行字符，可以指定一行显示的长度。<br>fgetss():从文件指针中读取一行并过滤掉HTML标记。<br>fread():读取定量的字符。<br>fpassthru():输出文件指针处的所有剩余数据。<br>file():将在整个文件读入数组中，以行分组。<br>readfile():读入一个文件并写入到输出缓冲。<br>file_get_contents():将整个文件读入一个字符串。<br>feof():判断是否读到文件结尾。<br>file_exists():查看文件是否存在。<br>（5）fclose():关闭文件。</p>
-<h2 id="八、标准函数"><a href="#八、标准函数" class="headerlink" title="八、标准函数"></a>八、标准函数</h2><p>1.PHP系统函数<br>（1）md5():MD5字符串加密函数<br>2.自定义函数<br>（1）创建函数：function 函数名（参数）{函数体;}<br>（2）函数名不可重复，不得以数字开头，可以包含数字、字母、下划线。<br>3.文件包含<br>（1）include():将在被调用处判断并包含一个文件。<br>（2）include_once():与include一样，不过先判断是否已经包含了文件，如果包含，则不再执行include_once()<br>（3）require()与include()语句几乎等价，区别仅在于调用失败后一个给出警告，一个是致命错误。<br>4.魔法常量<br>（1）不是真正常量，可以根据场合改变值，但是意义不变。<br>_FILE_：当前文件名<br>_LINE_：当前行号<br>_FUNCTION_：当前函数名<br>_CLASS_：当前类名<br>_METHOD_：当前方法名</p>
-<h2 id="九、字符串"><a href="#九、字符串" class="headerlink" title="九、字符串"></a>九、字符串</h2><p>1.字符串格式化<br>（1）chop():移除字符串后面的多余空白，包括新行。<br>（2）ltrim():一移除字符串起始处多余的空白。<br>（3）trim():移除字符串两边的空白。<br>（4）rtrim():chop()的别名。<br>（5）nl2br():将字符串中的换行用XHTML中的<code>&lt;br/&gt;</code>代替。<br>（6）htmlentities()和htmlspecialchars()：将特殊字符转换为HTML等价形式，前者转换所有字符，后者转换特殊字符。<br>（7）strip_tags():去掉字符串中的HTML标签。<br>（8）addslashes()为字符添加斜杠，stripslashes()则去掉这些斜杠。<br>2.操作字符串<br>（1）explode()：按指定字符分解字符串，返回一个数组。<br>（2）inplode()/join():按指定字符连接字符串。<br>（3）strtok():一次只从字符串中取出一些片段（称为令牌）。<br>（4）substr():返回给定起点和终点的字符串的子字符串。<br>（5）str_split():返回一个数组，元素分别是字符串中的每个字符。<br>（6）strrev():逆置字符串。<br>3.字符串比较<br>（1）strcmp():按照字典序依次比较，如果相等则返回0。<br>（2）strcasecmp():与上一个功能一致，只不过不区分大小写。<br>（3）strnatcmp():按自然排序比较。<br>（4）strnatcasecmp():不区分大小写。<br>（5）strspn():返回一个字符串中包含另一个字符串中字符的第一部分长度。也就是求相同部分。<br>（6）substr_count():返回一个字符串在另一个字符串中出现的次数。<br>4.查找字符串<br>（1）strstr()/strchr():查找某一字符串在特定字符串中的位置。<br>（2）stristr():不区分大小写。<br>（3）strpos():返回第一次出现位置，是一个数字<br>（4）strrpos():返回最后一次出现位置。<br>（5）替换字符串：<br>str_replace():替换所有的目标字符。<br>str_ireplace():不区分大小写<br>substr_replace():在一定长度区间上替换字符串，左闭右开。<br>5.中文字符<br>在函数前加让mb_前缀。</p>
-<h2 id="十、正则表达式"><a href="#十、正则表达式" class="headerlink" title="十、正则表达式"></a>十、正则表达式</h2><p>1.正则表达式：又称正规表示法、常规表示法，使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。<br>2.正则表达式中的元素<br>（1）量词<br>+：匹配任何至少包含一个前导字符串<br>*：匹配任何包含零个或多个前导字符串<br>？：匹配任何包含零个或一个前导字符串<br>.：匹配任意字符串<br>{x}：匹配任何包含x个前导字符串<br>{x,y}：匹配任何包含x到y个前导字符串<br>{x,}：匹配任何至少包含x个前导字符串<br>$：匹配字符串的行尾<br>^：匹配字符串的行首<br>|：匹配字符串的左边或者右边<br>()：包围一个字符分组或定义个反引用，可以使用\l\2提取<br>（2）元字符</p>
-<p><code>[a-z]:匹配任何包含小写字母a-z的字符串</code><br><code>[A-Z]:匹配任何包含大写字母A-Z的字符串</code><br><code>[0-9]:匹配任何包含数字0-9的字符串</code><br><code>[abc]:匹配任何包含小写字母a、b、c的字符串</code><br><code>[^abc]:匹配任何不包含小写字母a、b、c的字符串</code><br><code>[a-zA-Z0-9_]:匹配任何包含a-zA-Z0-9和下划线的字符串</code></p>
-<p>\w:匹配任何包含a-zA-Z0-9和下划线的字符串<br>\W:匹配任何没有下划线和字母数字的字符串<br>\d:匹配任何数字字符，等同[0-9]<br>\D:匹配任何非数字字符，等同<code>[^0-9]</code></p>
-<p>s:匹配任何空白字符<br>\S:匹配任何非空白字符<br>\b:匹配是否到达了单词边界<br>\B:匹配是否没有到达单词边界<br>:匹配正则中的特殊字符<br>（3）修饰符<br>i:完成不区分大小写的搜索<br>m:在匹配首内容或者尾内容时采用多行识别匹配<br>x:忽略正则中的空白<br>A:强制从头开始匹配<br>U:禁止贪婪匹配，只跟踪到最近的一个匹配符并结束<br>3.用正则表达式查找子字符串<br>（1）ereg()函数以区分大小写的方式在string中寻找与给定正则表达式pattern所匹配的子串。<br>（2）eregi()函数同上，只不过忽略大小写。<br>（3）函数原型：<br><code>int ereg(string pattern,string search,array [matches]);</code><br>（4）在search字符串中查找正则为pattern的表达式，如果发现匹配的字符串，则被存储在matches中，每个数组元素对应一个子表达式。<br>4.使用正则表达式分割字符串<br>（1）split()函数用正则表达式把字符串分隔到数组中<br>（2）函数原型：<br><code>array split(string pattern,string search[,int max]);</code><br>第三个参数为可选参数，表示返回数组的最大长度。<br><code>&lt;?php
-$str1=&quot;123123@mail.com.cn&quot;;
-$arr=split(&#39;\.|@&#39;,$str1);
-while(list($key,$value)=each($arr)){
-echo &#39;&lt;br/&gt;&#39;.$key.&#39;--&#39;.$value;
-}
-?&gt;
-//0--123123</code><br>   1–mail<br>   2–com<br>   3–cn</p>
-<h2 id="十一、时期处理"><a href="#十一、时期处理" class="headerlink" title="十一、时期处理"></a>十一、时期处理</h2><p>1.验证日期<br>checkdate()函数可以验证日期，有效返回true，否则返回false。<br>2.格式化时间和日期<br>date()函数返回预定义指令格式化时间和日期的字符串形式。</p>
-<h2 id="十二、表单处理"><a href="#十二、表单处理" class="headerlink" title="十二、表单处理"></a>十二、表单处理</h2><p>1.Header()函数<br>（1）表头是服务器以HTTP协议传HTML资料到浏览器前所送出的字符串。<br>①实现重定向：<br><code>&lt;?php
-header(&quot;Location:http://www.baidu.com&quot;);
-exit;
-?&gt;
-/*除非启用输出缓冲，否则重定向须在返回任何输出之前执行*/
-&lt;?php
-ob_start();//启用输出缓存
-?&gt;</code><br>②设置页面状态（404）：<br><code>&lt;?php
-header(&quot;HTTP/1.1 404 Not Found&quot;);
-header(&quot;status:404 Not Found&quot;);
-?&gt;</code><br>③下载文件<br><code>&lt;?php
-header(&#39;Content-Type:application/octet-stream&#39;);
-header(&#39;Content-Disposition:attachment;filename=&quot;example.zip&quot;&#39;);
-header(&#39;Content-Transfer-Encoding:binary&#39;);
-?&gt;</code><br>④设置文件类型<br><code>&lt;?php
-header(&#39;Content-Type:text/html:charset=iso-8859-1&#39;);
-header(&#39;Contnet-Type:text/html:charset=utf-8&#39;);
-header(&#39;Content-Type:text/plain&#39;);
-?&gt;</code></p>
-<p>header(‘Content-Type:image/jpeg’);<br>header(‘Content-Type:application/zip’);<br>header(‘Content-Type:application/pdf’);<br>header(‘Content-Type:audio/mpeg’);<br>header(‘Content-Type:application/x-shockwave-flash’);<br>2.接受及验证数据<br>（1）处理表单时，必须指定输入到表单的信息以何种方式传输到目的地（method=””）<br>（2）使用GET方法发送数据时，所有域都追加到浏览器的UPL后，随URL一起发送。<br>（3）采用POST方法时，值会作为标准值发送。<br>（4）PHP分别采用$_GET和$_POST超全局变量来处理GET和POST请求。<br>（5）使用$_GET或$_POST来接收数据<br>$_GET[‘username’]，发送的表单method必须时get<br>$_POST[‘username’]，发送的表单method必须是post<br>（6）采用isset()来验证$_GET[‘username’]超级全局变量是否定义<br>（7）采用htmlspecialchars()函数将HTML特殊字符进行过滤</p>
-<h2 id="十三、会话控制"><a href="#十三、会话控制" class="headerlink" title="十三、会话控制"></a>十三、会话控制</h2><p>1.Cookie应用<br>（1）setcookie()函数可以在客户端生成一个cookie文件，这个文件可以保存到期时间、名称、值等。<br><code>&lt;?php
-setcookie(&#39;name&#39;,&#39;Lee&#39;,time+(7*24*60*60));
-?&gt;</code><br>参数1：cookie名称；<br>参数2：cookie值；<br>参数3：cookie过期时间；<br>（2）读取cookie：<br><code>&lt;?php
-echo $_COOKIE[&#39;name&#39;];
-?&gt;</code><br>（3）删除cookie：<br><code>&lt;?php
-setcookie(&#39;name&#39;,&#39;&#39;);
-setcookie(&#39;name&#39;,&#39;Lee&#39;,time()-1);//删除cookie
-?&gt;</code><br>（4）cookie必须在HTML文件内容输出前设置。<br>2.Session会话处理<br>（1）服务器的一块周期为本次会话的内存。<br>（2）创建session<br><code>&lt;?php
-session_start();
-$_SESSION[&#39;name&#39;]=&#39;Lee&#39;;
-echo $_SESSION[&#39;name&#39;];
-?&gt;</code><br>（3）判断session是否存在。<br><code>&lt;?php
-session__start();
-$_SESSION[&#39;name&#39;]=&#39;Lee&#39;;
-if (isset($_SESSION[&#39;name&#39;])){
-echo $_SESSION[&#39;name&#39;];
-}
-else
-echo &#39;不存在&#39;;
-?&gt;</code><br>（4）删除session<br><code>&lt;?php
-session_start();
-$_SESSION[&#39;name&#39;]=&#39;Lee&#39;;
-unset($_SESSION[&#39;name&#39;]);
-?&gt;</code><br>（5）销毁所有session<br><code>session_destroy();</code></p>
-<h2 id="十四、文件上传"><a href="#十四、文件上传" class="headerlink" title="十四、文件上传"></a>十四、文件上传</h2><p>1.php配置<br>（1）file_uploads=on/off:确定服务器上的PHP脚本是否可以接受文件上传。<br>（2）max_execution time=integer:PHP脚本在注册一个致命错误之前可以执行的最长时间，以秒为单位。<br>（3）memory limit=integer:设置脚本可以分配的最大内存，以MB为单位。<br>（4）upload_max_filesize=integer:设置上传文件的大小，以MB为单位，此指令必须小于post_max_size。<br>（5）upload_tmp_dir=string:设置上传文件在处理之前必须存放在服务器的临时一个位置，直到文件移动到最终目的地为止。<br>（6）post_max_size=integer:确定post方法可以接受的信息的最大大小，以MB为单位。<br>2.$_FILES数组<br>（1）上传表单的HTML</p>
-<p>`<form enctype="multipart/form-data" action="upload.php" method="post"><br><input type="hidden" name="MAX_FILE_SIZE" value="100" /><br><input type="file" name="userfile"/>//上传文件<br><input type="submit" value="上传"/></p>
-</form>`
-
-<p>ENCTYPE=”multipart/form-data”,是固定写法，否则文件上传失败。<br>ACTION=”upload.php”,定义要处理上传文件的程序路径。<br>METHOD=”post”,定义传输方式为POST。<br><code>&lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;100&quot;&gt;</code>,这是一个隐藏域，定义了上传文件的大小上限，超过上限上传失败。它必须定义在文件上传域的前面。而且定义的值不能超过在php.ini文件upload_max_filesize设置的值。<br><code>&lt;input type=&quot;file&quot; name=&quot;userfile&quot;/&gt;</code>,这是文件上传域，type属性必须设置为file，但Name属性可以自定义。<br>（2）$_FILES超级全局变量<br>$_FILE<code>[&quot;userfile&quot;</code>][“tmp_name”]：文件在web服务器中临时储存的位置。<br>$_FILES<code>[&quot;userfile&quot;]</code>[“name”]:用户系统中的文件名称。<br>$_FILES<code>[&quot;userfile&quot;][&quot;size&quot;]</code>:文件的字节大小<br>$_FILES<code>[&quot;userfile&quot;][&quot;type&quot;]</code>:文件的MIME类型<br>$_FILES<code>[&quot;userfile&quot;]</code>[“error”]:文件上传相关的错误代码<br>3.PHP上传函数<br>（1）确认是否上传文件：is_uploaded_file()<br>（2）移动上传文件：move_upload_file()</p>
-<h2 id="十五、数据库"><a href="#十五、数据库" class="headerlink" title="十五、数据库"></a>十五、数据库</h2><p>1.web数据库，关系型数据库，文件型数据库。<br>2.关系数据库的概念<br>（1）表格<br>关系数据库由关系组成，这些关系通常称为表。<br>（2）列<br>表中的每一列都有唯一的名称，包含不同的数据，每一列都有一个相关的数据类。<br>（3）行<br>表中的每一行代表一个客户，每一行具有相同的格式，因而也具有相同的属性。行也称为记录。<br>（4）值<br>每一行对应每一列的单个值组成。每个值必须与该定义的数据类型相同。<br>（5）键<br>每一条数据所对应的唯一的标识<br>（6）模式<br>数据库整套表格的完整设计成为数据库的模式。<br>（7）关系<br>外键标识两个表格数据的关系。</p>
-
+        <p>php学习笔记</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/05/15/php/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/15/php/" data-id="cka7zyt3i000w40umaq3n0igi" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/15/php/" data-id="cka84f44y0012acumfhoghf52" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul>
@@ -242,6 +117,10 @@ unset($_SESSION[&#39;name&#39;]);
   <time datetime="2020-05-14T07:59:39.000Z" itemprop="datePublished">2020-05-14</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -258,43 +137,20 @@ unset($_SESSION[&#39;name&#39;]);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="一、互联网原理"><a href="#一、互联网原理" class="headerlink" title="一、互联网原理"></a>一、互联网原理</h2><p>1.上网（Internet-surfing）<br>其实是请求数据的过程，所谓的网页不过是一堆文件，通过HTTP协议在服务器和客户机间传递文件。<br>2.浏览器（browser）<br>（1）进行网页渲染、发起接受HTTP请求，有专门的本地文件夹接收从服务器传输的文件，<br>（2）五大浏览器：谷歌（chrome），火狐（Firefox），IE，苹果（Safari），欧朋（opera）<br>3.服务器（server）<br>本质是一台超大容量、超高性能的计算机，用作数据存储及运输。<br>4.HTTP协议<br>（1）超文本传输协议（HyperText Transfer Protocol）<br>（2）一次HTTP协议的实现过程包括请求（request）和响应（response）<br> *浏览一个网站往往同时发送多条HTTP请求。</p>
-<h2 id="二、HTML基础"><a href="#二、HTML基础" class="headerlink" title="二、HTML基础"></a>二、HTML基础</h2><p>1.纯文本<br>只保存文字内容不保存样式的文件。（.txt）一个中文占两个字节。<br>2.HTML<br>（1）超文本标记语言（HyperText Markup Language）<br>（2）描述文档语义的语言，在浏览器中不会显示，在编辑器中以普通文本显示。<br>（3）具体样式由CSS控制，HTML只是赋予文本语义。<br>3.HTML结构<br>（1）基本结构</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">tittle</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">tittle</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span>	</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>tittle区域为浏览器标签页上的显示内容，body区域为具体页面的内容，这两个区域为用户可见区域。<br>（2）文档DTD<br>位置：HTML文件的第一行内容<br>标志：<!DOCTYPE html><br>名称：文档定义类型（DocType Definition）。<br>内容：定义了该文档使用的HTML规范的版本。<br>手册：<a href="http://www.w3school.cn（中文网站）" target="_blank" rel="noopener">www.w3school.cn（中文网站）</a><br>版本：HTML1.0~5.0，4.0版本时将结构与样式分离，常用HTML4.01。衍生出XHTML1.0在4.01版本上进行严格话与扩展升级。<br>          在这两个常用规范下衍生出三个小规范，分别为Strict（严格版）、Transitional（过渡版）、Frameset（框架集版）<br>4.html标签</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/1999/xhtml"</span> <span class="attr">xml:lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>中文字符集包括：<br>UTF-8:国际通用字库，涵盖了所有人类的语言文字。一个汉字3个字节。<br>gb2312/gbk:中国字库，国家标准字库，涵盖了汉字和一些常用外文、符号。一个汉字2个字节。<br>*制作外文网站使用UTF-8，如果网站含有大量中文且要求加载速度，使用gbk。<br>（3）title标签：是一个双标签，显示网页的标题。同时tittle里的关键字与搜索引擎优化（SEO）有关。</p>
-<p>（1）html是一个双标签，需要开始和结束<br>（2）xmlns:xml的namespace规定了标签使用的命名规范。用户浏览器不一致，必须规范什么是标签什么是内容。<br>（3）xml:lang:规定标签使用的语言。<br>5.head标签<br>（1）是一对双标签，对网页进行配置<br>（2）meta标签：是一个单标签，其中的charset定义了当前文件所使用的字符库。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html;charset=UTF-8"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="三、HTML语法"><a href="#三、HTML语法" class="headerlink" title="三、HTML语法"></a>三、HTML语法</h2><p>1.标签之间对换行及空格不敏感，HTML只识别标签之间的嵌套。<br>2.空白折叠：普通文本之间的所有空格或换行将被压缩为一个空格。<br>3.标签分类：容器级（放置任意内容、标签）、文本级（只能放置文本、图片、表单元素）<br>4.标签属性：<br>（1）标签属性为键值对格式，k代表属性名，v代表属性值。<br>（2）键值对的格式是 k=”v”，尽量用双引号。<br>（3）一个标签可以有多个属性。<br>（4）一个属性可以有多个属性值，在双引号内部用空格间隔。<br>（5）属性书写在标签的起始标签内部，与标签名间用空格间隔，属性之间也需要空格间隔。</p>
-<h2 id="四、HTML标签"><a href="#四、HTML标签" class="headerlink" title="四、HTML标签"></a>四、HTML标签</h2><p>1.h系列<br>（1）<h1>标题文本</h1><br>（2）h标签分为六个等级，h1<del>h6表示1</del>6级标题。<br>（3）h1的权重最高，优先被搜索引擎抓取。<br>（4）属于容器级，不同等级之间不存在嵌套关系，同一等级权重一致。<br>2.p标签<br>（1）<p>段落文本</p><br>（2）给文本添加一个段落的语义。<br>（3）属于文本级标签，<br>3.img标签<br>（1）<img/><br>（2）定义一个图像，相当于一个特殊的文本。<br>（3）可插入图片类型：jpg、png、gif<br>（4）img标签的属性：<br>src：source表示图片的路径<br>width：表示图片的宽度<br>height：表示图片的高度<br>border：边框属性，它的值可以设置边框的厚度<br>title：设置提示文本<br>alt：设置图像没有找到时的替换文本<br>（5）路径：查找文件的方法<br>①相对路径：从自身出发去寻找目标文件<br>同级查找：直接书写文件名+后缀；<br>子级查找：先查找文件名，然后通过关闭符号/进入文件夹，选取里面的文件；<br>上级查找：通过../符号表示向上一级；<br>*相对路径不能跨盘符；<br>②绝对路径：从盘符出发寻找目标文件，以http://开头的路径也是绝对路径<br>绝对路径不可移植，实际并不推荐。<br>4.a标签<br>（1）<a>提示文本</a><br>（2）anchor标签，设置超级链接，可以跳到相应网站。<br>（3）a标签的属性：<br>href：hypertext reference超文本引用，值为跳转链接的地址；<br>target：表示是否在新标签页打开链接，属性值”_blank”表示在新窗口打开；<br>title：设置鼠标悬停文本；<br>（4）页面内锚点跳转：<br>通过标签的name、id属性跳转；<br>①设置锚点：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a name&#x3D;&quot;anchor&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;anchor&quot;&gt;&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
-
-<p>②链接锚点：<code>&lt;a href=&quot;#anchor&quot;&gt;&lt;/a&gt;</code><br>（5）跨页面锚点跳转：<br>链接锚点：<code>&lt;a href=&quot;url#anchor&quot;&gt;&lt;/a&gt;</code></p>
-<h2 id="五、列表"><a href="#五、列表" class="headerlink" title="五、列表"></a>五、列表</h2><p>列表形式：无序列表，有序列表，定义列表<br>1.无序列表<br>（1）<code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code><br>（2）添加一个无序列表的语义。<br>（3）无序列表是一组标签，包括ul（unordered list）和li（list）两个成对出现的标签。<br>（4）li嵌套于ul标签。<br>（5）li标签属于容器级标签，甚至还能嵌套ul、li。<br>2.有序列表<br>（1）<code>&lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;</code><br>（2）添加一个有序列表的语义。<br>（3）有序列表是一组标签，包括ol（ordered list）和li（list）<br>（4）li嵌套于ol标签。<br>（5）li标签属于容器级标签，甚至还能嵌套ol、li。<br>3.定义列表<br>（1）有三个标签dl、dt、dd组成。<br>（2）<code>&lt;dl&gt;</code><br>                <code>&lt;dt&gt;主题a&lt;/dt&gt;</code><br>                <code>&lt;dd&gt;说明a&lt;/dd&gt;</code><br>                <code>&lt;dt&gt;主题b&lt;/dt&gt;</code><br>                <code>&lt;dd&gt;说明b&lt;/dd&gt;</code><br>       <code>&lt;/dl&gt;</code><br>（3）添加一个定义列表的结构，里面有定义主题，对主题的解释。<br>（4）dl：definition list，定义列表。<br>         dt：definition title，定义标题。<br>         dd：definition description，定义说明，解释最近的dt。<br>（5）这组标签需要同时出现，dl里嵌套了dt和dd。<br>（6）dt后可以不跟dd，也可跟多个dd。<br>4.div和span标签<br>div：<br>（1）div是大的范围。div：division，没有特殊语义，用来布局。<br>（2）div里经常放置一些具有特殊功能的标签，这就是布局过程。<br>（3）div是容器级标签。<br>span：<br>（1）span是小范围跨度，用于小范围布局。<br>（2）span是文本级标签。一般认为p&gt;span&gt;a</p>
-<h2 id="六、表格"><a href="#六、表格" class="headerlink" title="六、表格"></a>六、表格</h2><p>1.表格基础<br>（1）table、tr、td，三者嵌套关系table&gt;tr&gt;td<br>（2）tr：table rows，行，td：table dock，单元格。<br>（3）th标签：表示表头单元格，添加一个表头语义，与td同等地位。<br>2.合并单元格<br>（1）单元格标签：td、th。<br>（2）有两个属性用来合并单元格：<br>rowspan：合并行单元格，属性值是数字，表示合并几行个单元格。<br>colspan：合并列单元格，属性值是数字，表示合并几个列单元格。<br>上边线一致的单元格属于同一行。</p>
-<h2 id="七、表单"><a href="#七、表单" class="headerlink" title="七、表单"></a>七、表单</h2><p>表单是网页上提供用户输入、选择的控件。<br>1.form<br>（1）所有表单元素都需要写在form内部，是一个功能型标签而不是结构型标签，<br>（2）功能：规定我们提交的数据发送到哪里，发送的方法是哪种。<br>method：提交方法，属性值为get和post。<br>action：提交的位置。<br>2.文本框<br>（1）允许用户输入文本。<br>（2）input标签：输入，有一个属性type，属性值不同代表不同的表单元素。</p>
-<p><code>&lt;input type=&quot;text&quot; value=&quot;默认文本&quot; /&gt;</code><br>3.密码框<br>（1）input标签的type属性值为password。<br>4.按钮<br>（1）按钮有三种，普通、提交、重置<br>普通type：button<br>提交type：submit<br>重置type：reset<br>（2）value值为显示在按钮上的提示文本。<br>5.单选框<br>（1）同一组单选框只能有一个选择。<br>（2）type：radio<br>（3）同一组单选框必须以name属性加以区分。<br>6.多选框<br>（1）同一组多选框可以有多个选择。<br>（2）type：checkbox<br>（3）同一组多选框必须以name属性加以区分。<br>7.文本域<br>（1）标签textarea，可以输入多行文本。<br>（2）rows：属性值是数字，表示有多少行。<br>（3）cols：属性是数字，表示每行可以有多少字节。一个汉字两字节。<br>8.下拉菜单<br>（1）是一组标签，必须同时出现，有嵌套关系。<br>（2）select：选择，option：选择，只能select中嵌套option。两者都是双标签。</p>
-<h2 id="八-html杂项"><a href="#八-html杂项" class="headerlink" title="八.html杂项"></a>八.html杂项</h2><p>1.注释<br>（1）书写方式：<code>&lt;!--注释内容--&gt;</code><br>2.字符实体<br>（1）一些特殊符号并不能直接在文本里书写。HTML提供了字符实体或转义字符来表示这些字符。<br>（2）常用字符实体：<br>&lt;：&lt; less than</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;：&gt; greater than</span><br><span class="line">&gt;无换行空格：&amp;nbsp; no breaking space</span><br><span class="line">&gt;版权©：&amp;copy copyright</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="一、css基础知识"><a href="#一、css基础知识" class="headerlink" title="一、css基础知识"></a>一、css基础知识</h2><p>1.css基础概念<br>（1）css：cascading style sheets，层叠样式表。<br>（2）作用：规定了标签在网页上的显示样式。<br>（3）前端三层：<br>html：结构层，打造网页的整体架构。<br>css：样式层，装饰页面。<br>JavaScrip：行为层，一些页面交互效果。<br>2.css的作用<br>（1）重要概念：层叠式，样式（html标签在页面的显示效果）。<br>（2）将需要的样式的属性值直接罗列出来。<br>（3）样式设置的两个关键，选择器和样式表。<br>3.css的几个小样式<br>（1）文本样式：<br>大小：font-size。本身是一个复合属性font，里面的单一属性需要用font单一属性名。<br>颜色：color。属性值有多种选择方案，十六进制，RGB码，rgba，颜色的英文名。<br>字体：font-family。复合属性的一个单一属性，中文字体和英文字体。书写时英文字体在前，中文字体在后。<br>（2）盒子实体化基本属性：<br>宽度：width。属性值是像素为单位。<br>高度：height。属性值是像素为单位。<br>背景色：background-color。属性值是颜色值。<br>边框：border。复合属性，有多个属性值，为宽度，颜色。<br>4.css的书写位置<br>（1）根据书写css属性位置的不同，将我们的样式表分为三种：行内式、内嵌式、外链式。<br>行内式：css所有属性书写在一个标签的一个叫style属性里，不同属性间用；分割。<br>内嵌式：写在html文件里的style标签中，所有的css属性都写在<code>&lt;style&gt;css样式&lt;/style&gt;</code>这对双标签内部，用{}括起。此时style标签有一个属性type，值为text/css。<br>外链式：将css单独写在一个.css文件里，再用link标签引入。<br>5.css注意事项<br>（1）css的键值对：k:v;<br>（2）多个属性值间必须用;（分号）分割。<br>（3）内嵌式所有的样式必须写在一对大括号内。<br>（4）代码上传时为了速度需要去除空格空行，进行代码压缩。</p>
-<h2 id="二、基础选择器"><a href="#二、基础选择器" class="headerlink" title="二、基础选择器"></a>二、基础选择器</h2><p>1.标签选择器：指我们选择需要添加样式的标签元素模式。<br>（1）用法：标签名{}<br>（2）选中的是页面所有的对应标签，不管嵌套方式多复杂。<br>（3）用途：进行初始样式的设置，默认样式的清除。<br>2.id选择器：通过标签的id属性值来选择相应的标签。<br>（1）书写：#开头，后面紧跟id名，中间没有任何空格。#para{}<br>（2）页面内标签id唯一，所以id选择器只能选择一个标签。<br>（3）id属性名需要遵循一个原则，必须以字母开头，严格区分大小写，可以是数字下划线或者横线。<br>3.类选择器：通过标签的class属性来选择标签。<br>（1）写法：.开头，后面跟class属性值，不能有空格。<br>（2）class命名规则与id相同，一个class可以有多个值，多个类名之间用空格隔开。<br>（3）类上样式，id上行为。<br>4.通配符*：可以选中包括body在内的所有标签<br>（1）简单案例里清空默认样式。</p>
-<h2 id="三、高级选择器"><a href="#三、高级选择器" class="headerlink" title="三、高级选择器"></a>三、高级选择器</h2><p>包括后代选择器、交集选择器、并集选择器<br>1.后代选择器<br>（1）后代选择器又叫包含选择器。<br>（2）通过标签之间的嵌套、层级关系缩小选择范围。<br>（3）书写：祖先 后代{} 中间有一个空格。<br>（4）空格左侧是右侧的祖先元素，并非一定要父子关系。<br>（5）一般祖先用类名，后代用标签。<br>（6）可以多层选择。<br>2.并集选择器<br>（1）既满足条件1又满足条件2。<br>（2）两种或以上选择器同时存在于一个标签上。<br>（3）写法：选择器之间直接连接，没有任何符号。<br>（4）所选择的基础选择器可以是标签和类的连续或类与类的连续。<br>（5）兼容问题：IE6不兼容类的连续交集。<br>3.并集选择器<br>（1）满足条件1或者满足条件2。<br>（2）很多元素可能又相同的css样式，通过并集选择器统一设置。<br>（3）书写：不同选择器之间用,连接。</p>
-<h2 id="四、继承性和层叠性"><a href="#四、继承性和层叠性" class="headerlink" title="四、继承性和层叠性"></a>四、继承性和层叠性</h2><p>1.继承性<br>（1）祖先元素拥有的样式后代元素也会继承。<br>（2）后代元素能继承来自祖先元素的文字样式，不能继承盒子的样式。<br>（3）继承性是层叠性的第一个特性。<br>2.层叠性<br>（1）多个选择器选中一个元素，相同的元素该依据谁的样式？<br>（2）选择器权重：权重高的层叠掉权重低的。<br>id选择器&gt;类选择器&gt;标签选择器&gt;通配符<br>（3）对于有高级选择器的情况<br>①选择器都选中了元素<br>首先比较权重（数基础选择器的个数，依次比较其权重）先比较id的个数，再比较类的个数，最后比较标签的个数。如果有并集，则以实际选中的元素为准。<br>如果权重相同，则看书写顺序，书写在后面的层叠掉前面的。<br>②如果没选中元素，样式靠继承<br>第一种：祖先元素距离目标距离不同，继承最近的祖先元素。<br>第二种：距离一样比较权重。<br>第三种：距离权重都一样，则比较书写顺序，后写的层叠先写的。<br>③关键字!important<br>给单一属性添加，会给这个属性权重加到最大。</p>
-
+        <p>HTML和CSS学习笔记</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/05/14/html+css/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/14/html+css/" data-id="cka7zyt3h000u40um0h6i0c89" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/14/html+css/" data-id="cka84f44l000tacumgw0n7p05" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
+
     </footer>
   </div>
   
@@ -333,7 +189,7 @@ unset($_SESSION[&#39;name&#39;]);
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/09/test/" data-id="cka7zyt3j000y40umfuyxhxvf" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/09/test/" data-id="cka84f44m000wacum9z4908uh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -369,7 +225,7 @@ unset($_SESSION[&#39;name&#39;]);
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-12/" data-id="cka7zyt2s000540um0r6jeg3y" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-12/" data-id="cka84f44b0006acum1o8mahed" class="article-share-link">Share</a>
       
       
     </footer>
@@ -405,7 +261,7 @@ unset($_SESSION[&#39;name&#39;]);
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-11/" data-id="cka7zyt2o000140um06hha9jl" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-11/" data-id="cka84f4460002acum244w3v7n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,7 +297,7 @@ unset($_SESSION[&#39;name&#39;]);
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-10/" data-id="cka7zyt2r000440um9y1m8zdn" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-10/" data-id="cka84f44d0008acumcarw4mgn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -477,7 +333,7 @@ unset($_SESSION[&#39;name&#39;]);
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-9/" data-id="cka7zyt3g000r40um5h4xba9r" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-9/" data-id="cka84f44i000oacum08v7a14e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -522,7 +378,7 @@ unset($_SESSION[&#39;name&#39;]);
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-8/" data-id="cka7zyt3f000o40umgcm8923f" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-8/" data-id="cka84f44g000facum3074ch9f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wp/" rel="tag">wp</a></li></ul>
@@ -569,7 +425,7 @@ unset($_SESSION[&#39;name&#39;]);
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-7/" data-id="cka7zyt3e000l40um1l7may52" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-7/" data-id="cka84f44k000racum1be4cz2g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wp/" rel="tag">wp</a></li></ul>
@@ -616,7 +472,7 @@ unset($_SESSION[&#39;name&#39;]);
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-6/" data-id="cka7zyt3d000i40um6kslgi2f" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-6/" data-id="cka84f44i000lacum28ha5sj8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wp/" rel="tag">wp</a></li></ul>
@@ -653,7 +509,7 @@ unset($_SESSION[&#39;name&#39;]);
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wp/" rel="tag">wp</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wp/" rel="tag">wp</a></li></ul>
     </div>
   </div>
 
@@ -663,7 +519,7 @@ unset($_SESSION[&#39;name&#39;]);
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/wp/" style="font-size: 20px;">wp</a>
+      <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/wp/" style="font-size: 20px;">wp</a>
     </div>
   </div>
 
