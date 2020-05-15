@@ -5,17 +5,24 @@
   
 
   
-  <title>tags | nekocharm111</title>
+  <title>bugku-web-8 | nekocharm111</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://nekocharm111.github.io/tags/index.html">
+  <meta name="description" content="bugku之web第八题题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bugku-web-8">
+<meta property="og:url" content="https://nekocharm111.github.io/2020/05/05/bugku-web-8/index.html">
 <meta property="og:site_name" content="nekocharm111">
+<meta property="og:description" content="bugku之web第八题题解">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-09T15:01:50.000Z">
-<meta property="article:modified_time" content="2020-05-09T15:03:39.681Z">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-8/bugku-web-8/8-1.png">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-8/bugku-web-8/8-2.png">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-8/bugku-web-8/8-3.png">
+<meta property="article:published_time" content="2020-05-05T15:31:14.000Z">
+<meta property="article:modified_time" content="2020-05-06T08:53:38.632Z">
 <meta property="article:author" content="nekocharm111">
+<meta property="article:tag" content="wp">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-8/bugku-web-8/8-1.png">
   
     <link rel="alternate" href="/atom.xml" title="nekocharm111" type="application/atom+xml">
   
@@ -64,12 +71,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-bugku-web-8" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/tags/index.html" class="article-date">
-  <time datetime="2020-05-09T15:01:50.000Z" itemprop="datePublished">2020-05-09</time>
+    <a href="/2020/05/05/bugku-web-8/" class="article-date">
+  <time datetime="2020-05-05T15:31:14.000Z" itemprop="datePublished">2020-05-05</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bugku/">bugku</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -78,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      bugku-web-8
     </h1>
   
 
@@ -86,17 +97,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>bugku之web第八题题解</p>
+<a id="more"></a>
+
+<p>先来看题，一脸懵逼。</p>
+<p><img src="bugku-web-8/8-1.png" alt=""></p>
+<p>进入页面后疯狂跳转…找个机会看个源码</p>
+<p><img src="bugku-web-8/8-2.png" alt=""></p>
+<p>注意到有img src =一栏，猜测会随机跳转到我们需要的页面，直接burp suite抓包</p>
+<p><img src="bugku-web-8/8-3.png" alt=""></p>
+<p>注意长度，找长度不一样的包，一般这种包多包含了flag字段，查看源码果然如此。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/tags/index.html" data-id="cka7zyt3a000e40umcvwrhe9e" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-8/" data-id="cka7zyt3f000o40umgcm8923f" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wp/" rel="tag">wp</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2020/05/05/bugku-web-9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          bugku-web-9
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/05/bugku-web-7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">bugku-web-7</div>
+    </a>
+  
+</nav>
+
   
 </article>
 

@@ -5,17 +5,29 @@
   
 
   
-  <title>tags | nekocharm111</title>
+  <title>bugku-web-4 | nekocharm111</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://nekocharm111.github.io/tags/index.html">
+  <meta name="description" content="bugku之web第三题题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bugku-web-4">
+<meta property="og:url" content="https://nekocharm111.github.io/2020/05/05/bugku-web-4/index.html">
 <meta property="og:site_name" content="nekocharm111">
+<meta property="og:description" content="bugku之web第三题题解">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-09T15:01:50.000Z">
-<meta property="article:modified_time" content="2020-05-09T15:03:39.681Z">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-4/bugku-web-4/post-1.png">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-4/bugku-web-4/post-2.png">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-4/bugku-web-4/post-3.png">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-4/bugku-web-4/post-4.png">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-4/bugku-web-4/post-5.png">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-4/bugku-web-4/post-6.png">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-4/bugku-web-4/post-7.png">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-4/bugku-web-4/post-8.png">
+<meta property="article:published_time" content="2020-05-05T15:30:48.000Z">
+<meta property="article:modified_time" content="2020-05-06T08:53:10.498Z">
 <meta property="article:author" content="nekocharm111">
+<meta property="article:tag" content="wp">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nekocharm111.github.io/2020/05/05/bugku-web-4/bugku-web-4/post-1.png">
   
     <link rel="alternate" href="/atom.xml" title="nekocharm111" type="application/atom+xml">
   
@@ -64,12 +76,16 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-bugku-web-4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/tags/index.html" class="article-date">
-  <time datetime="2020-05-09T15:01:50.000Z" itemprop="datePublished">2020-05-09</time>
+    <a href="/2020/05/05/bugku-web-4/" class="article-date">
+  <time datetime="2020-05-05T15:30:48.000Z" itemprop="datePublished">2020-05-05</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bugku/">bugku</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -78,7 +94,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      bugku-web-4
     </h1>
   
 
@@ -86,17 +102,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>bugku之web第三题题解</p>
+<a id="more"></a>
+
+<p>首先看题，预测需要用post请求方法。</p>
+<p><img src="bugku-web-4/post-1.png" alt=""></p>
+<p>进入在线场景，发现需要用post方式提交一个值为flag的what变量。</p>
+<p><img src="bugku-web-4/post-2.png" alt=""></p>
+<p>问题来了，浏览器无法直接提交post请求，所以我们需要辅助工具。比较省事的方法是下载浏览器的插件，推荐Firefox的MaxHackerBar，简单好用，也可以用burpsuite。</p>
+<p><img src="bugku-web-4/post-3.png" alt=""></p>
+<p>先点击Load URL把地址扣下来</p>
+<p><img src="bugku-web-4/post-4.png" alt=""></p>
+<p>然后在下方工具栏勾选Post Data </p>
+<p><img src="bugku-web-4/post-5.png" alt=""></p>
+<p>接着把要提交的变量输入最下方的操作框</p>
+<p><img src="bugku-web-4/post-6.png" alt=""></p>
+<p>单击Execution执行</p>
+<p><img src="bugku-web-4/post-7.png" alt=""></p>
+<p>查看网页变化，获得flag。</p>
+<p><img src="bugku-web-4/post-8.png" alt=""></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/tags/index.html" data-id="cka7zyt3a000e40umcvwrhe9e" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/05/bugku-web-4/" data-id="cka7zyt39000d40um6q6nd78p" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wp/" rel="tag">wp</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2020/05/05/bugku-web-5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          bugku-web-5
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/05/bugku-web-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">bugku-web-3</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
