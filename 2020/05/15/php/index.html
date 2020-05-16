@@ -217,8 +217,8 @@ $_SESSION[&#39;name&#39;]=&#39;Lee&#39;;
 unset($_SESSION[&#39;name&#39;]);
 ?&gt;</code><br>（5）销毁所有session<br><code>session_destroy();</code></p>
 <h2 id="十四、文件上传"><a href="#十四、文件上传" class="headerlink" title="十四、文件上传"></a>十四、文件上传</h2><p>1.php配置<br>（1）file_uploads=on/off:确定服务器上的PHP脚本是否可以接受文件上传。<br>（2）max_execution time=integer:PHP脚本在注册一个致命错误之前可以执行的最长时间，以秒为单位。<br>（3）memory limit=integer:设置脚本可以分配的最大内存，以MB为单位。<br>（4）upload_max_filesize=integer:设置上传文件的大小，以MB为单位，此指令必须小于post_max_size。<br>（5）upload_tmp_dir=string:设置上传文件在处理之前必须存放在服务器的临时一个位置，直到文件移动到最终目的地为止。<br>（6）post_max_size=integer:确定post方法可以接受的信息的最大大小，以MB为单位。<br>2.$_FILES数组<br>（1）上传表单的HTML</p>
-<p>`<form enctype="multipart/form-data" action="upload.php" method="post"><br><input type="hidden" name="MAX_FILE_SIZE" value="100" /><br><input type="file" name="userfile"/>//上传文件<br><input type="submit" value="上传"/></p>
-</form>`
+<p>`<form enctype="multipart/form-data" action="upload.php" method="post"><br><input type="hidden" name="MAX_FILE_SIZE" value="100"><br><input type="file" name="userfile">//上传文件<br><input type="submit" value="上传"></form></p>
+`
 
 <p>ENCTYPE=”multipart/form-data”,是固定写法，否则文件上传失败。<br>ACTION=”upload.php”,定义要处理上传文件的程序路径。<br>METHOD=”post”,定义传输方式为POST。<br><code>&lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;100&quot;&gt;</code>,这是一个隐藏域，定义了上传文件的大小上限，超过上限上传失败。它必须定义在文件上传域的前面。而且定义的值不能超过在php.ini文件upload_max_filesize设置的值。<br><code>&lt;input type=&quot;file&quot; name=&quot;userfile&quot;/&gt;</code>,这是文件上传域，type属性必须设置为file，但Name属性可以自定义。<br>（2）$_FILES超级全局变量<br>$_FILE<code>[&quot;userfile&quot;</code>][“tmp_name”]：文件在web服务器中临时储存的位置。<br>$_FILES<code>[&quot;userfile&quot;]</code>[“name”]:用户系统中的文件名称。<br>$_FILES<code>[&quot;userfile&quot;][&quot;size&quot;]</code>:文件的字节大小<br>$_FILES<code>[&quot;userfile&quot;][&quot;type&quot;]</code>:文件的MIME类型<br>$_FILES<code>[&quot;userfile&quot;]</code>[“error”]:文件上传相关的错误代码<br>3.PHP上传函数<br>（1）确认是否上传文件：is_uploaded_file()<br>（2）移动上传文件：move_upload_file()</p>
 <h2 id="十五、数据库"><a href="#十五、数据库" class="headerlink" title="十五、数据库"></a>十五、数据库</h2><p>1.web数据库，关系型数据库，文件型数据库。<br>2.关系数据库的概念<br>（1）表格<br>关系数据库由关系组成，这些关系通常称为表。<br>（2）列<br>表中的每一列都有唯一的名称，包含不同的数据，每一列都有一个相关的数据类。<br>（3）行<br>表中的每一行代表一个客户，每一行具有相同的格式，因而也具有相同的属性。行也称为记录。<br>（4）值<br>每一行对应每一列的单个值组成。每个值必须与该定义的数据类型相同。<br>（5）键<br>每一条数据所对应的唯一的标识<br>（6）模式<br>数据库整套表格的完整设计成为数据库的模式。<br>（7）关系<br>外键标识两个表格数据的关系。</p>
@@ -226,7 +226,7 @@ unset($_SESSION[&#39;name&#39;]);
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://nekocharm111.github.io/2020/05/15/php/" data-id="cka97ca9q000o7sum9s1n7vmo" class="article-share-link">Share</a>
+      <a data-url="https://nekocharm111.github.io/2020/05/15/php/" data-id="cka97sbcw000pekum7t5r9620" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul>
