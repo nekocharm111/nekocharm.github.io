@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>xctf-web-beginner | nekocharm111</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="攻防世界web新手区题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xctf-web-beginner">
+<meta property="og:url" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/index.html">
+<meta property="og:site_name" content="nekocharm111">
+<meta property="og:description" content="攻防世界web新手区题解">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C1-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C1-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C1-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C2-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C2-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C3-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C3-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C3-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C3-4.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C4-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C4-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C4-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C5-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C5-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C5-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C6-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C6-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C6-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C7-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C7-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C7-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C7-4.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C8-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C8-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C8-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C8-4.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C9-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C9-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C9-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C9-4.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C10-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C10-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C10-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C11-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C11-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C11-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C11-4.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C12-1.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C12-2.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C12-3.jpg">
+<meta property="og:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C12-4.jpg">
+<meta property="article:published_time" content="2020-05-22T14:38:57.000Z">
+<meta property="article:modified_time" content="2020-05-25T04:03:01.986Z">
+<meta property="article:author" content="nekocharm111">
+<meta property="article:tag" content="“tags”">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C1-1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="nekocharm111" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nekocharm111</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://nekocharm111.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-xctf-web-beginner" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/22/xctf-web-beginner/" class="article-date">
+  <time datetime="2020-05-22T14:38:57.000Z" itemprop="datePublished">2020-05-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/categories/">categories</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      xctf-web-beginner
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="攻防世界web新手区题解"><a href="#攻防世界web新手区题解" class="headerlink" title="攻防世界web新手区题解"></a>攻防世界web新手区题解</h1><a id="more"></a>
+
+<h2 id="No-1"><a href="#No-1" class="headerlink" title="No.1"></a>No.1</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C1-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C1-2.jpg" alt></p>
+<p>根据题目提示，直接F12查看网页源码。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C1-3.jpg" alt></p>
+<h2 id="No-2"><a href="#No-2" class="headerlink" title="No.2"></a>No.2</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C2-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C2-2.jpg" alt></p>
+<p>根据题目提示，查看robots.txt页面，发现flag藏身之所，访问f1ag_1s_h3re.php即可。</p>
+<h2 id="No-3"><a href="#No-3" class="headerlink" title="No.3"></a>No.3</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C3-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C3-2.jpg" alt></p>
+<p>提示寻找备份文件，可以使用目录扫描工具，御剑进行扫描。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C3-3.jpg" alt></p>
+<p>发现index.php.bak，访问页面即得flag。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C3-4.jpg" alt></p>
+<h2 id="No-4"><a href="#No-4" class="headerlink" title="No.4"></a>No.4</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C4-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C4-2.jpg" alt></p>
+<p>根据提示查看cookie，进入工程模式的网络部分，可以直接查看cookie。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C4-3.jpg" alt></p>
+<h2 id="No-5"><a href="#No-5" class="headerlink" title="No.5"></a>No.5</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C5-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C5-2.jpg" alt></p>
+<p>根据提示，我们可能需要更改button的属性，查看源码果然如此。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C5-3.jpg" alt></p>
+<h2 id="No-6"><a href="#No-6" class="headerlink" title="No.6"></a>No.6</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C6-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C6-2.jpg" alt></p>
+<p>一看是登录界面，加上题目给出提示是弱口令，直接采用密码爆破的方式，得出密码。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C6-3.jpg" alt></p>
+<h2 id="No-7"><a href="#No-7" class="headerlink" title="No.7"></a>No.7</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C7-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C7-2.jpg" alt></p>
+<p>根据页面显示的php源码，我们需要以GET方法提交a和b两个变量，同时需要满足if语句的限制条件。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C7-3.jpg" alt></p>
+<p>第一个绕过是提交一个a变量，使得a的值恒等于0且a自身不等于0。看上去很矛盾，实际注意到此处运用弱类型比较。浮点数在计算机中的存储是近似处理的，所以0.0自身不为0。但是进行弱类型比较时，0.0的存在使得0也转变为浮点数0.所以两者相等。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C7-4.jpg" alt></p>
+<p>对b的绕过考虑is_numeric()函数，此函数要求传入参数为数字或数字字符串。目的构造一个大于1234的变量b，可是传入的b不能是数字或者数字字符串，于是想到将空格转义，出现的%符号非法可以绕过is_numeric()函数，而进行比较时则不会影响。</p>
+<h2 id="No-8"><a href="#No-8" class="headerlink" title="No.8"></a>No.8</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C8-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C8-2.jpg" alt></p>
+<p>在浏览器地址框，可以直接进行GET型变量的提交。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C8-3.jpg" alt></p>
+<p>POST方法提交的变量位于报文正文，此时需要修改请求头的手段，可以用浏览器插件或者抓包工具操作。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C8-4.jpg" alt></p>
+<h2 id="No-9"><a href="#No-9" class="headerlink" title="No.9"></a>No.9</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C9-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C9-2.jpg" alt></p>
+<p>根据提示，要求客户机的ip地址必须是123.123.123.123，直接在请求头中添加XFF字段即可伪造。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C9-3.jpg" alt></p>
+<p>XFF绕过后，根据网页提示，还要求客户机必须从指定网页转到目标页面，此时伪造referer字段即可。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C9-4.jpg" alt></p>
+<h2 id="No-10"><a href="#No-10" class="headerlink" title="No.10"></a>No.10</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C10-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C10-2.jpg" alt></p>
+<p>网页直接告诉我们使用一句话木马，此时可以通过菜刀或者蚁剑进行连接，或者直接以POST方式传递命令进行执行。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C10-3.jpg" alt></p>
+<h2 id="No-11"><a href="#No-11" class="headerlink" title="No.11"></a>No.11</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C11-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C11-2.jpg" alt></p>
+<p>可以先随便ping几个地址进行测试，根据回显可以发现后端可能只是简单的系统命令执行。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C11-3.jpg" alt></p>
+<p>此时可以采用命令执行漏洞，利用管道符执行我们期望的命令，先搜索与flag有关的位置。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C11-4.jpg" alt></p>
+<p>发现flag后读取即可。</p>
+<h2 id="No-12"><a href="#No-12" class="headerlink" title="No.12"></a>No.12</h2><p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C12-1.jpg" alt></p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C12-2.jpg" alt></p>
+<p>随便输入密码试试水。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C12-3.jpg" alt></p>
+<p>发现永远也输不对。</p>
+<p><img src="/2020/05/22/xctf-web-beginner/D:%5Cblog%5Cmyblog%5Csource_posts%5Cxctf-web-beginner%5C12-4.jpg" alt></p>
+<p>查看源码发现真正的密码序列在函数外，根据字符串的形式，用base64解码，之后根据ascii码转码即可得到flag序列。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://nekocharm111.github.io/2020/05/22/xctf-web-beginner/" data-id="ckalyu86k000yukum00uo5uou" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E2%80%9Ctags%E2%80%9D/" rel="tag">“tags”</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/15/php/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">php</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bugku/">bugku</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/categories/">categories</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wp/" rel="tag">wp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E2%80%9Ctags%E2%80%9D/" rel="tag">“tags”</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/wp/" style="font-size: 20px;">wp</a> <a href="/tags/%E2%80%9Ctags%E2%80%9D/" style="font-size: 10px;">“tags”</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/22/xctf-web-beginner/">xctf-web-beginner</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/15/php/">php</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/14/html+css/">html+css</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/09/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/05/bugku-web-12/">bugku-web-12</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 nekocharm111<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
