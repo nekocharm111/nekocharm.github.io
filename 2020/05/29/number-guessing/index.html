@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    bugku |  nekocharm111
+    number-guessing |  nekocharm111
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,7 +44,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-bugku" class="article article-type-post" itemscope
+  <article id="post-number-guessing" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -52,7 +52,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  bugku
+  number-guessing
 </h1>
  
 
@@ -61,12 +61,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/05/26/bugku/" class="article-date">
-  <time datetime="2020-05-26T10:21:02.000Z" itemprop="datePublished">2020-05-26</time>
+      <a href="/2020/05/29/number-guessing/" class="article-date">
+  <time datetime="2020-05-29T02:47:40.000Z" itemprop="datePublished">2020-05-29</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/bugku/">bugku</a>
+    <a class="article-category-link" href="/categories/%E6%BA%90%E7%A0%81/">源码</a>
   </div>
 
       
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">515</span>
+            <span class="post-count">816</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
@@ -96,8 +96,6 @@
 
     
     
-    <div class="tocbot"></div>
-
 
 
 
@@ -110,60 +108,20 @@
       
 
       
-      <p>bugku刷题web篇</p>
+      <p>自己写的简单猜数小游戏。</p>
 <a id="more"></a>
 
-<h2 id="No-13"><a href="#No-13" class="headerlink" title="No.13"></a>No.13</h2><p><img src="/2020/05/26/bugku/13-1.jpg" alt></p>
-<p>进入页面什么也没有除了炫酷的特效，看看源码也一筹莫展。</p>
-<p><img src="/2020/05/26/bugku/13-2.jpg" alt></p>
-<p>啥也不会那就扫吧，目前除了域名扫描也无计可施了。</p>
-<p><img src="/2020/05/26/bugku/13-3.jpg" alt></p>
-<p>既然扫出东西了，那就进去康康。</p>
-<p><img src="/2020/05/26/bugku/13-4.jpg" alt></p>
-<p>简单试一试弱口令后就爆破吧。</p>
-<p><img src="/2020/05/26/bugku/13-5.jpg" alt></p>
-<p>结果出来了，密码就是hack。</p>
-<h2 id="No-14"><a href="#No-14" class="headerlink" title="No.14"></a>No.14</h2><p><img src="/2020/05/26/bugku/14-1.jpg" alt></p>
-<p>进入页面，随便试一试弱口令，admin，123.</p>
-<p><img src="/2020/05/26/bugku/14-2.jpg" alt></p>
-<p>那就修改XFF片段伪装成本地登录吧。加上X-Forwarded-For: 127.0.0.1</p>
-<p><img src="/2020/05/26/bugku/14-5.jpg" alt></p>
-<p>好像还是不行，不过发现了一行奇怪的注释，base64解码为test123，不是是pw吧，不会吧不会吧。</p>
-<p><img src="/2020/05/26/bugku/14-6.jpg" alt></p>
-<p>啊这，得到flag。</p>
-<h2 id="No-15"><a href="#No-15" class="headerlink" title="No.15"></a>No.15</h2><p><img src="/2020/05/26/bugku/15-1.jpg" alt></p>
-<p>那就看看源码吧。</p>
-<p><img src="/2020/05/26/bugku/15-2.jpg" alt></p>
-<p><img src="/2020/05/26/bugku/15-3.jpg" alt></p>
-<p>把url编码内容解码，整理一下JS脚本内容。</p>
-<p><img src="/2020/05/26/bugku/15-4.jpg" alt></p>
-<p>看eval()函数，我们只需要提交p1+54aa2+p2这一字符串即可。</p>
-<h2 id="No-16"><a href="#No-16" class="headerlink" title="No.16"></a>No.16</h2><p><img src="/2020/05/26/bugku/16-1.jpg" alt></p>
-<p><img src="/2020/05/26/bugku/16-2.jpg" alt></p>
-<p>点击超链接？恭敬不如从命。</p>
-<p><img src="/2020/05/26/bugku/16-3.jpg" alt></p>
-<p>看到file关键字，估计存在伪协议漏洞。看看文件内容都有啥。</p>
-<p><img src="/2020/05/26/bugku/16-4.jpg" alt></p>
-<p>base64解码，结果是test5，失望…题目提醒flag藏在index里，那么康康index都有啥。</p>
-<p><img src="/2020/05/26/bugku/16-5.jpg" alt></p>
-<p>解码结果如下，发现flag。</p>
-<p><img src="/2020/05/26/bugku/16-6.jpg" alt></p>
-<h2 id="No-17"><a href="#No-17" class="headerlink" title="No.17"></a>No.17</h2><p><img src="/2020/05/26/bugku/17-1.jpg" alt></p>
-<p>进入页面，看到密码框，还告诉了长度，甚至连URL上也写着baopo…</p>
-<p><img src="/2020/05/26/bugku/17-2.jpg" alt></p>
-<p>那就硬爆呗，就挺突然了。</p>
-<p><img src="/2020/05/26/bugku/17-3.jpg" alt></p>
-<h2 id="No-19"><a href="#No-19" class="headerlink" title="No.19"></a>No.19</h2><p><img src="/2020/05/26/bugku/19-1.jpg" alt></p>
-<p>一串字符，不明所以（事后发现是NULL的MD5码）</p>
-<p><img src="/2020/05/26/bugku/19-2.jpg" alt></p>
-<p>题目提示了备份，那就直接看看备份文件吧。</p>
-<p><img src="/2020/05/26/bugku/19-3.jpg" alt></p>
-<p><img src="/2020/05/26/bugku/19-4.jpg" alt></p>
-<p>打开发现是PHP代码审计。</p>
-<p><img src="/2020/05/26/bugku/19-5.jpg" alt></p>
-<p>大概意思就是比较两个变量key1和key2，要求他们的值不一样，但是经过MD5加密后的值一样。同时提交变量的过程中进行了小小的过滤。</p>
-<p>过滤比较好处理，函数把key替换为空，鉴于只进行一次替换，双写绕过即可。题目用到了MD5加密，很自然地联系到开头的那串字符，MD5解密后发现是NULL，这就提示了MD5绕过的一种方法，采用数组的方式声明变量，MD5函数处理不了，返回值都为NULL。</p>
-<p><img src="/2020/05/26/bugku/19-6.jpg" alt></p>
+<p>先贴一波源码吧，写得特暴力（</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD XHTML 1.0 Transitional&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;TR&#x2F;xhtml1&#x2F;DTD&#x2F;xhtml1-transitional.dtd&quot;&gt;</span><br><span class="line">&lt;html xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;1999&#x2F;xhtml&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv&#x3D;&quot;Content-Type&quot; content&#x3D;&quot;text&#x2F;html; charset&#x3D;utf-8&quot; &#x2F;&gt;</span><br><span class="line">&lt;title&gt;GAME&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--head is over--&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;beginning&quot; &gt;</span><br><span class="line">Welcome to my game!&lt;br&#x2F;&gt;</span><br><span class="line">Let me tell you the rules about this NUMBER GUESSING game.&lt;br&#x2F;&gt;</span><br><span class="line">We will set a random number, what you need to do is to guess it.&lt;br&#x2F;&gt; </span><br><span class="line">After your each chance, we will give you a more exact range of the number.&lt;br&#x2F;&gt;</span><br><span class="line">Push the START button, and the game will begin. Good luck!&lt;br&#x2F;&gt;</span><br><span class="line">&lt;button type&#x3D;&quot;button&quot; onclick&#x3D;&quot;begin()&quot; id&#x3D;&quot;btn1&quot; &gt;START&lt;&#x2F;button&gt; </span><br><span class="line">&lt;&#x2F;p&gt;</span><br><span class="line">&lt;!--intriduction of the rule--&gt;</span><br><span class="line">    </span><br><span class="line">&lt;style&gt;</span><br><span class="line">#beginning&#123;</span><br><span class="line">	position:absolute;</span><br><span class="line">	top: 50%;</span><br><span class="line">	left: 50%;</span><br><span class="line">	transform: translate(-50%, -50%);</span><br><span class="line">	font: 20px&#x2F;1.5 Tahoma,Helvetica,Arial;</span><br><span class="line">&#125;</span><br><span class="line">#btn1&#123;</span><br><span class="line">    background-color:#ba2323;</span><br><span class="line">    padding:10px;</span><br><span class="line">    position:relative;</span><br><span class="line">    font-family: &#39;Open Sans&#39;, sans-serif;</span><br><span class="line">    font-size:12px;</span><br><span class="line">    text-decoration:none;</span><br><span class="line">    color:#fff;</span><br><span class="line">    border: solid 1px #831212;</span><br><span class="line">    background-image: linear-gradient(bottom, rgb(171,27,27) 0%, rgb(212,51,51) 100%);</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">    </span><br><span class="line">&lt;script language&#x3D;&quot;javascript&quot;&gt;</span><br><span class="line">function begin()</span><br><span class="line">&#123;</span><br><span class="line">	document.getElementById(&quot;beginning&quot;).style.display&#x3D;&quot;none&quot;;</span><br><span class="line">	document.getElementById(&quot;btn1&quot;).style.display&#x3D;&quot;none&quot;;</span><br><span class="line">	document.getElementById(&quot;d1&quot;).style.display&#x3D;&quot;&quot;;</span><br><span class="line">	number&#x3D;Math.floor(Math.random()*100+1);&#x2F;&#x2F;generate number randomly</span><br><span class="line">	chance&#x3D;5;&#x2F;&#x2F;only five chances!</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*initialization*&#x2F;</span><br><span class="line"></span><br><span class="line">function restart()&#123;location.reload();&#125;&#x2F;*Start the game again*&#x2F;</span><br><span class="line">function giveup()&#123;alert(number);location.reload();&#125;&#x2F;*Tell you the right number*&#x2F;</span><br><span class="line">function getnumber()&#123;</span><br><span class="line">	var max_range&#x3D;100,min_range&#x3D;1;</span><br><span class="line">	var submit_number&#x3D;document.getElementById(&quot;number&quot;).value;</span><br><span class="line">	if(submit_number&gt;max_range||submit_number&lt;min_range)&#123;</span><br><span class="line">		alert(&#39;illegal number!&#39;);</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">    &#x2F;*border check*&#x2F;</span><br><span class="line">	--chance;</span><br><span class="line">	if(submit_number&#x3D;&#x3D;number)&#123;</span><br><span class="line">		alert(&#39;You are right!&#39;);</span><br><span class="line">		location.reload();</span><br><span class="line">	&#125;</span><br><span class="line">	else&#123;</span><br><span class="line">		if(submit_number&gt;number)&#123;</span><br><span class="line">			if(submit_number-number&gt;&#x3D;max_range&#x2F;5)</span><br><span class="line">				alert(&#39;much bigger&#39;);</span><br><span class="line">			else alert(&#39;little bigger&#39;);</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123; </span><br><span class="line">			if(number-submit_number&gt;&#x3D;max_range&#x2F;5)</span><br><span class="line">				alert(&#39;much smaller&#39;);</span><br><span class="line">			else alert(&#39;little smaller&#39;)</span><br><span class="line">		&#125;</span><br><span class="line">        &#x2F;*tell you two diffirent ranges*&#x2F;</span><br><span class="line">	&#125;</span><br><span class="line">	if(!chance)&#123;alert(&#39;game over! The number is&#39;+number+&#39;!!!&#39;);location.reload();&#125;&#x2F;*No chance, game over*&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;noscript&gt;Your browser does not support JavaScript!&lt;&#x2F;noscript&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id&#x3D;&quot;d1&quot; style&#x3D;&quot;display: none;&quot;&gt;</span><br><span class="line">  &lt;p&gt;Total range:1~100&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;p display&#x3D;&quot;none&quot;&gt;Your number: </span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;number&quot; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot; onclick&#x3D;&quot;getnumber()&quot; class&#x3D;&quot;game&quot;&#x2F;&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;Restart&quot; onclick&#x3D;&quot;restart()&quot; class&#x3D;&quot;game&quot; &#x2F;&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;I give up&quot; onclick&#x3D;&quot;giveup()&quot; class&#x3D;&quot;game&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">#d1&#123;</span><br><span class="line">	position:absolute;</span><br><span class="line">	top: 50%;</span><br><span class="line">	left: 50%;</span><br><span class="line">	transform: translate(-50%, -50%);</span><br><span class="line">	font: 20px&#x2F;1.5 Tahoma,Helvetica,Arial;</span><br><span class="line">&#125;</span><br><span class="line">.game&#123;</span><br><span class="line">	background-color:#000000;</span><br><span class="line">    padding:10px;</span><br><span class="line">    position:relative;</span><br><span class="line">    font-family: &#39;Open Sans&#39;, sans-serif;</span><br><span class="line">    font-size:12px;</span><br><span class="line">    text-decoration:none;</span><br><span class="line">    color:#fff;</span><br><span class="line">    border: solid 1px #831212;</span><br><span class="line">    background-image: linear-gradient(bottom, rgb(171,27,27) 0%, rgb(212,51,51) 100%);</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--body is over--&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>首先进入页面，英语渣没办法。</p>
+<p><img src="/2020/05/29/number-guessing/1.jpg" alt></p>
+<p>点击start开始。</p>
+<p><img src="/2020/05/29/number-guessing/2.jpg" alt></p>
+<p>随便猜一猜。</p>
+<p><img src="/2020/05/29/number-guessing/3.jpg" alt></p>
+<p>侮辱我智商，爷不做辣！！！</p>
+<p><img src="/2020/05/29/number-guessing/4.jpg" alt></p>
 
       
       <!-- reward -->
@@ -228,14 +186,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nekocharm111.github.io/2020/05/26/bugku/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nekocharm111.github.io/2020/05/29/number-guessing/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wp/" rel="tag">wp</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/game/" rel="tag">game</a></li></ul>
 
 
     </footer>
@@ -246,19 +204,10 @@
   
   <nav class="article-nav">
     
+    
       <a href="/2020/05/28/xctf-web-senior/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            xctf-web-senior
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2020/05/22/xctf-web-beginner/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">xctf-web-beginner</div>
+        <div class="article-nav-title">xctf-web-senior</div>
       </a>
     
   </nav>
