@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    xctf-web-senior |  nekocharm111
+    JS_notes |  nekocharm111
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,7 +44,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-xctf-web-senior" class="article article-type-post" itemscope
+  <article id="post-JS-notes" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -52,7 +52,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  xctf-web-senior
+  JS_notes
 </h1>
  
 
@@ -61,12 +61,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/05/28/xctf-web-senior/" class="article-date">
-  <time datetime="2020-05-28T01:18:07.000Z" itemprop="datePublished">2020-05-28</time>
+      <a href="/2020/05/31/JS-notes/" class="article-date">
+  <time datetime="2020-05-31T08:07:26.000Z" itemprop="datePublished">2020-05-31</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/xctf/">xctf</a>
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
   </div>
 
       
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.2k</span>
+            <span class="post-count">1.8k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4 分钟</span>
+            <span class="post-count">6 分钟</span>
         </span>
     </span>
 </div>
@@ -110,88 +110,23 @@
       
 
       
-      <h1 id="攻防世界web进阶区（部分）题解"><a href="#攻防世界web进阶区（部分）题解" class="headerlink" title="攻防世界web进阶区（部分）题解"></a>攻防世界web进阶区（部分）题解</h1><a id="more"></a>
+      <h1 id="JS学习记录（持续更新）"><a href="#JS学习记录（持续更新）" class="headerlink" title="JS学习记录（持续更新）"></a>JS学习记录（持续更新）</h1><a id="more"></a>
 
-<h2 id="No-1-baby-web"><a href="#No-1-baby-web" class="headerlink" title="No.1 baby_web"></a>No.1 baby_web</h2><p><img src="/2020/05/28/xctf-web-senior/1-1.jpg" alt></p>
-<p>进入页面什么都没有。</p>
-<p><img src="/2020/05/28/xctf-web-senior/1-2.jpg" alt></p>
-<p>题目提示想想初始页面，一般都是index.php。</p>
-<p>可是不管怎么改变路径，总是跳到1.php页面，看看请求头是不是重定向有问题。</p>
-<p><img src="/2020/05/28/xctf-web-senior/1-3.jpg" alt></p>
-<p>果然是重定向问题，返回状态码302，还好响应头里已经包含了flag。</p>
-<h2 id="No-2-Training-WWW-Robots"><a href="#No-2-Training-WWW-Robots" class="headerlink" title="No.2 Training-WWW-Robots"></a>No.2 Training-WWW-Robots</h2><p><img src="/2020/05/28/xctf-web-senior/2-1.jpg" alt></p>
-<p>叫我们去学习robots协议，那就直接看看robots.txt吧。</p>
-<p><img src="/2020/05/28/xctf-web-senior/2-2.jpg" alt></p>
-<p>发现疑似flag的文件，进去康康。</p>
-<p><img src="/2020/05/28/xctf-web-senior/2-3.jpg" alt></p>
-<p>flag到手。</p>
-<p><img src="/2020/05/28/xctf-web-senior/2-4.jpg" alt></p>
-<h2 id="No-3-php-rce"><a href="#No-3-php-rce" class="headerlink" title="No.3 php_rce"></a>No.3 php_rce</h2><p><img src="/2020/05/28/xctf-web-senior/3-1.jpg" alt></p>
-<p>rce是远程执行漏洞，百度找一找payload试一试。</p>
-<p><img src="/2020/05/28/xctf-web-senior/3-2.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/3-3.jpg" alt></p>
-<p>知道版本后，搜索对应版本适用的payload，先执行搜索flag的命令。</p>
-<p><img src="/2020/05/28/xctf-web-senior/3-4.jpg" alt></p>
-<p>之后cat读取文件。</p>
-<p><img src="/2020/05/28/xctf-web-senior/3-5.jpg" alt></p>
-<p>附上使用的payload：</p>
-<p>/index.php?s=index/think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=find%20/%20-name%20%22flag%22</p>
-<p>/index.php?s=index/think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=cat%20/flag</p>
-<h2 id="No-4-Web-php-include"><a href="#No-4-Web-php-include" class="headerlink" title="No.4 Web php include"></a>No.4 Web php include</h2><p><img src="/2020/05/28/xctf-web-senior/4-1.jpg" alt></p>
-<p>题目说到文件包含，估计要使用php伪协议了。</p>
-<p><img src="/2020/05/28/xctf-web-senior/4-2.jpg" alt></p>
-<p>看到对php://进行了循环过滤，双写绕过不行，可以采用大小写绕过。但是还有一个echo函数，我们可以另辟蹊径。</p>
-<p><img src="/2020/05/28/xctf-web-senior/4-3.jpg" alt></p>
-<p>输出当前目录下的文件，发现了flag疑似文件，输出即可。</p>
-<p><img src="/2020/05/28/xctf-web-senior/4-4.jpg" alt></p>
-<h2 id="No-5-ics-06"><a href="#No-5-ics-06" class="headerlink" title="No.5 ics-06"></a>No.5 ics-06</h2><p><img src="/2020/05/28/xctf-web-senior/5-1.jpg" alt></p>
-<p>随便试一试网站的交互，发现大多数点了没反应。只有一个报表中心还有用。</p>
-<p><img src="/2020/05/28/xctf-web-senior/5-3.jpg" alt></p>
-<p>注意到URL栏处有一个id=1，难不成不同id会有不同效果？</p>
-<p><img src="/2020/05/28/xctf-web-senior/5-4.jpg" alt></p>
-<p>果不其然，爆破后得出flag。</p>
-<h2 id="No-6-warmup"><a href="#No-6-warmup" class="headerlink" title="No.6 warmup"></a>No.6 warmup</h2><p><img src="/2020/05/28/xctf-web-senior/6-1.jpg" alt></p>
-<p>直接查看源码。</p>
-<p><img src="/2020/05/28/xctf-web-senior/6-2.jpg" alt></p>
-<p>查看source.php文件。</p>
-<p><img src="/2020/05/28/xctf-web-senior/6-3.jpg" alt></p>
-<p>有一个hint.php文件，看一看。</p>
-<p><img src="/2020/05/28/xctf-web-senior/6-4.jpg" alt></p>
-<p>知道flag的文件名了，可以进行代码审计了（我不会QAQ，只有借鉴百度的一个dalao了）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.第一个&#96;&#96;if&#96;&#96;语句对变量进行检验，要求&#96;&#96;$page&#96;&#96;为字符串，否则返回false</span><br><span class="line">2.第二个&#96;&#96;if&#96;&#96;语句判断&#96;&#96;$page&#96;&#96;是否存在于&#96;&#96;$whitelist&#96;&#96;数组中，存在则返回true</span><br><span class="line">3.第三个&#96;&#96;if&#96;&#96;语句判断截取后的&#96;&#96;$page&#96;&#96;是否存在于&#96;&#96;$whitelist&#96;&#96;数组中，截取&#96;&#96;$page&#96;&#96;中&#96;&#96;&#39;?&#39;&#96;&#96;前部分，存在则返回true</span><br><span class="line">4.第四个&#96;&#96;if&#96;&#96;语句判断url解码并截取后的&#96;&#96;$page&#96;&#96;是否存在于&#96;&#96;$whitelist&#96;&#96;中，存在则返回true</span><br></pre></td></tr></table></figure>
+<p>JavaScript<br>一、概览<br>1.JavaScript主要包含ECMAScript,DOM和BOM三部分。<br>2.书写JS：<br>区分大小写；<br>标识符规范；<br>忽略程序种标识之间的空格；<br>忽略换行符；<br>以分号结尾；<br>单行注释与多行注释；<br>采用unicode编写。</p>
+<p>二、数据类型<br>1.Number,Boolean,String,Object,Undefined,Null,(ES6新增Symbol)<br>2.Number<br>（1）JS不区分浮点型与整形<br>（2）具体采用IEEE 754标准定义的64为位浮点数表示数字。<br>（3）整数用整形存储，小数用浮点型存储。<br>（4）NaN表示非数字。<br>2.1算术运算<br>（1）基础算术运算（+-<em>/%）<br>（2）封装在Math中的复杂运算：<br>Math.pow(a,b):a的b次方<br>Math.round(n):四舍五入<br>Math.ceil(n):向上取整<br>Math.floor(n):向下取整<br>Math.abs(n):求绝对值<br>Math.max(x,y,z):返回最大值<br>Math.min(x,y,z):返回最小值<br>2.2.Date()构造函数创建日期<br>3.String<br>3.1字符串直接量<br>（1）由单引号或双引号括起来的字符序列。<br>（2）引号内可直接包括引号不用转义。<br>3.2转义字符<br>（1）反斜线\加一个字符。<br>3.3匹配字符<br>（1）两条斜线之间的文本构成了一个正则表达式直接量。<br>（2）第二条斜线后可以跟修饰符。<br>（3）正则表达式，JS采用Perl的正则语法。<br>/^HTML/ 匹配以HTML开头的字符串<br>/[1-9][0-9]</em>/ 匹配一个非零数字，后面是任意个数字<br>/\bjavascript\b/i 匹配单词javascript，忽略大小写<br>（4）RegExp和String对象均定义了利用正则表达式进行模式匹配和查找与替换的函数。<br>4.其他数据类型<br>4.1布尔类型<br>只有两个值true和false<br>4.2对象<br>（1）对象是一组数据和功能的集合。<br>（2）对象的创建可通过构造函数进行。<br>var obj=new Object();var obj={};<br>（3）每一个对象都可以自定义属性和方法。<br>（4）可用instanceof来判断对象是否存在。<br>4.3Null和Undefined<br>（1）Undefined只有一个值，即undefined，变量未初始化时，默认为undefined。<br>（2）Null也只有一个值，即null，表示一个空对象指针。<br>5数据类型检测：typeof表达式<br>var a,b=null,c=new Object();var d=function(){};<br>typeof ‘123’//string<br>typeof true//boolean<br>typeof a//undefined<br>typeof b//Object<br>typeof c//Object<br>typeof d//Function</p>
+<p>三、类型转换<br>10+’objects’//‘10objects’，数字10转换成字符串；<br>‘7’*’4’//28，两个字符串均转换成数字；<br>var n=1-‘x’//NaN字符串’x’无法转换成数字；<br>n+’objects’//NaN objects;NaN转换成字符串’NaN’；<br>1相等性：以下结果均为true<br>null == undefined;//这两值被认为相等<br>“0” ==0;//比较前字符串转数字<br>0 == false;//比较前布尔值转数字<br>“0” == false;//比较前布尔值和字符串都转数字<br>2.显示转换<br>（1）使用Boolean(),Number(),String(),Object()函数。当不通过new运算符调用这些函数时，他们会作为类型转换函数并按照规则做类型转换。<br>（2）eg：<br>Number(“3”)//3；parselnt()和parseFloat()函数也可用于数字转换；<br>String(false)//“false”；或使用false.toString()；<br>3.转换为原始值<br>（1）JS的数据类型可以分为两种，原始类型和引用类型。原始类型为基本类型，引用类型为对象。<br>（2）所有的对象继承了两个转换方法，第一个是toString()，返回这个对象的字符串。<br>({x:1,y:2}).toString()//“[object Object]”<br>（3）另一个转换对象的函数是valueOf()。如果存在任意原始值，它就默认将对象转换为表示他的原始值。对象是复合值，而且大多数对象无法真正表示为一个原始值，因此默认的valueOf()方法简单地返回对象本身，而不是返回一个原始值。</p>
+<p>四、变量声明<br>1.1var声明<br>（1）在JS中一般使用var关键词声明变量：<br>var carName；<br>（2）变量声明后，其值默认为空。<br>（3）在JS中，默认在最开始对所有变量进行声明，不管其在程序中的实际位置，这叫做变量提升。<br>（4）var声明的变量不存在块级作用域。<br>1.2直接声明全局变量<br>carName=value//严格模式下报错<br>2命名规则<br>（1）以字母、$、_开头。<br>（2）变量中其他位置可以有数字。<br>（3）大小写敏感。<br>3.变量值如何放入HTML标签</p>
+<p id="demo"></p>
+<script>
+var carName='Volvo';
+document,getElementById('demo').innerHTML=carName;
+</script>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">若以上四个&#96;&#96;if&#96;&#96;语句均未返回值，则返回false</span><br><span class="line">有三个&#96;&#96;if&#96;&#96;语句可以返回true，第二个语句直接判断&#96;&#96;$page&#96;&#96;，不可用</span><br><span class="line">第三个语句截取&#96;&#96;&#39;?&#39;&#96;&#96;前部分，由于?被后部分被解析为get方式提交的参数，也不可利用</span><br><span class="line">第四个&#96;&#96;if&#96;&#96;语句中，先进行url解码再截取，因此我们可以将?经过两次url编码，在服务器端提取参数时解码一次，checkFile函数中解码一次，仍会解码为&#96;&#96;&#39;?&#39;&#96;&#96;，仍可通过第四个&#96;&#96;if&#96;&#96;语句校验。（&#96;&#96;&#39;?&#39;&#96;&#96;两次编码值为&#96;&#96;&#39;%253f&#39;&#96;&#96;）,构造url：</span><br><span class="line">http:&#96;&#96;&#x2F;&#x2F;399fe153-1f62-43d5-a67f-e645a0e7ac66.node3.buuoj.cn&#x2F;source.php?file&#x3D;source.php%253f..&#x2F;ffffllllaaaagggg&lt;br&gt;&lt;br&gt;经过测试发现无返回值，这可能是因为我们不知道ffffllllaaaagggg文件存放的具体位置&lt;br&gt;所以依次增加..&#x2F;,最终成功拿到flag</span><br></pre></td></tr></table></figure>
-
-<h2 id="No-7-NewsCenter"><a href="#No-7-NewsCenter" class="headerlink" title="No.7 NewsCenter"></a>No.7 NewsCenter</h2><p><img src="/2020/05/28/xctf-web-senior/7-1.jpg" alt></p>
-<p>有一个查询框，多半是SQL注入了（目前还不是很会，借鉴一个dalao的wp，等我学会了再…）</p>
-<p><img src="/2020/05/28/xctf-web-senior/7-2.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/7-3.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/7-4.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/7-5.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/7-6.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/7-7.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/7-8.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/7-9.jpg" alt></p>
-<h2 id="No-9-PHP2"><a href="#No-9-PHP2" class="headerlink" title="No.9 PHP2"></a>No.9 PHP2</h2><p><img src="/2020/05/28/xctf-web-senior/9-1.jpg" alt></p>
-<p>什么都没有，先扫扫目录。</p>
-<p><img src="/2020/05/28/xctf-web-senior/9-2.jpg" alt></p>
-<p>会扫出一个叫做.phps的文件，这个是php源代码文件。</p>
-<p><img src="/2020/05/28/xctf-web-senior/9-3.jpg" alt></p>
-<p>进去之后就是代码审计。</p>
-<p><img src="/2020/05/28/xctf-web-senior/9-4.jpg" alt></p>
-<p>看上去比较简单，就是以GET方式提交一个名为id值为admin的变量，需要先编码。注意到经过一次URL编码的变量传入后会解码一次，而源码中还有一个解码函数，所以需要进行两次URL编码。</p>
-<h2 id="No-10-unserialize3"><a href="#No-10-unserialize3" class="headerlink" title="No.10 unserialize3"></a>No.10 unserialize3</h2><p><img src="/2020/05/28/xctf-web-senior/10-1.jpg" alt></p>
-<p>进入页面是一个代码审计，题目已经说了是反序列化，代码中也出现了weakup() 函数，此题的目的是绕过这个函数。序列化后改变变量的值使其不匹配会导致反序列化错误，就可以绕过weakup()函数了。</p>
-<p><img src="/2020/05/28/xctf-web-senior/10-2.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/10-3.jpg" alt></p>
-<h2 id="No-11-upload1"><a href="#No-11-upload1" class="headerlink" title="No.11 upload1"></a>No.11 upload1</h2><p><img src="/2020/05/28/xctf-web-senior/11-1.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/11-2.jpg" alt></p>
-<p>需要我们上传文件，那我们就看看能不能传木马。</p>
-<p><img src="/2020/05/28/xctf-web-senior/11-3.jpg" alt></p>
-<p>可以尝试用bp抓包改一改文件后缀。</p>
-<p><img src="/2020/05/28/xctf-web-senior/11-5.jpg" alt></p>
-<p><img src="/2020/05/28/xctf-web-senior/11-6.jpg" alt></p>
-<p>之后用菜刀连接即可。</p>
+<p>五、作用域<br>1.变量与函数的可访问范围，分为全局作用域和局部作用域。<br>2.全局作用域<br>（1）最外层定义的函数或变量。<br>（2）局部作用域中的变量不适用var关键词声明。<br>（3）所有window对象属性拥有全局作用域。<br>3.局部有作用域<br>代码片段或函数内部。<br>4.作用域链<br>[[Scope]]内部属性包含了函数被创建的作用域中对象的集合，这个集合称为函数的作用域链，决定了哪些数据能被函数访问。函数执行过程中，每遇到一个变量，都会经历一次标识符解析过程以决定从何处获取和存储数据。解析过程优先从作用域链中的局部变量进行选取。</p>
+<p>六、原始表达式<br>1.原始表达式包含变量名和运算符。<br>2.原始表达式是表达式的最小单位。<br>3.直接量。数字直接量(1.2)字符串直接量(‘aa’)正则表达式直接量(/pattern/)<br>4.关键字构成的原始表达式。true,false,null,this</p>
+<p>七、函数定义表达式<br>1.函数定义：赋值后才可调用。<br>var square =function(){}<br>2.函数声明：定义前就可调用。<br>Function functionName(){}<br>3.函数调用与对象创建<br>（1）对象创建表达式创建一个对象并调用一个(构造)函数初始化新对象的属性。<br>（2）对象创建表达式和函数调用表达式类似，区别是对象创建表达式之前多了一个new关键字。<br>new Object();<br>（3）如果没有参数，可以省略括号。<br>new Date;</p>
+<p>八、运算符<br>1.由标点符号和关键字来表示。<br>2.常见运算符：<br>++,–,-,+,~,|,delete,typeof,void</p>
+<p>九、表达式<br>1.算术表达式<br>一元加法：把操作数转化为数字<br>一元减法：先转化为数字再取反<br>2.关系表达式<br>=：得到或者赋值<br>==：检测是否相等，可以允许进行类型转换，求反：!=<br>===：恒等，检测两个操作数是否严格相等，求反!==<br>in：左操作数是一个字符串或者可转化为字符串，右操作数是一个对象。如果右操作数的对象拥有一个名为左操作数的属性名，那么表达式返回true。<br>instanceof：左操作数是一个对象，右操作数标识对象的类。如果左侧的对象是右侧类的实例，则返回true。<br>3.逻辑表达式<br>&amp;&amp;，||，！，存在短路规则。<br>4.赋值表达式<br>多个赋值运算符从右到左计算。</p>
 
       
       <!-- reward -->
@@ -256,14 +191,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nekocharm111.github.io/2020/05/28/xctf-web-senior/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nekocharm111.github.io/2020/05/31/JS-notes/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wp/" rel="tag">wp</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/" rel="tag">JS</a></li></ul>
 
 
     </footer>
@@ -274,19 +209,19 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/05/29/number-guessing/" class="article-nav-link">
+      <a href="/2020/05/31/Linux-GLI/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            number-guessing
+            Linux_GLI
           
         </div>
       </a>
     
     
-      <a href="/2020/05/26/bugku/" class="article-nav-link">
+      <a href="/2020/05/29/number-guessing/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">bugku</div>
+        <div class="article-nav-title">number-guessing</div>
       </a>
     
   </nav>
