@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Linux_GLI |  nekocharm111
+    序列比对法 |  nekocharm111
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,7 +44,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-Linux-GLI" class="article article-type-post" itemscope
+  <article id="post-序列比对法" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -52,7 +52,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Linux_GLI
+  序列比对法
 </h1>
  
 
@@ -61,14 +61,10 @@
 
     
     <div class="article-meta">
-      <a href="/2020/05/31/Linux-GLI/" class="article-date">
-  <time datetime="2020-05-31T08:08:00.000Z" itemprop="datePublished">2020-05-31</time>
+      <a href="/2020/07/05/%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9%E6%B3%95/" class="article-date">
+  <time datetime="2020-07-05T01:36:31.000Z" itemprop="datePublished">2020-07-05</time>
 </a>
       
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
       
       
 <div class="word_count">
@@ -76,7 +72,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">930</span>
+            <span class="post-count">2.5k</span>
         </span>
     </span>
 
@@ -85,7 +81,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4 分钟</span>
+            <span class="post-count">8 分钟</span>
         </span>
     </span>
 </div>
@@ -110,20 +106,57 @@
       
 
       
-      <h1 id="Linux命令行小笔记（持续更新）"><a href="#Linux命令行小笔记（持续更新）" class="headerlink" title="Linux命令行小笔记（持续更新）"></a>Linux命令行小笔记（持续更新）</h1><a id="more"></a>
+      <h1 id="基于生物信息学序列比对方法的攻击特征提取方法"><a href="#基于生物信息学序列比对方法的攻击特征提取方法" class="headerlink" title="基于生物信息学序列比对方法的攻击特征提取方法"></a>基于生物信息学序列比对方法的攻击特征提取方法</h1><a id="more"></a>
 
-<p>1.人机交互模式：<br>命令行界面：Command Line Interface (CLI)<br>图形界面：Graphical User Interface (GUI)<br>2.命令行的模式<br>命令式：<br>% 命令 [参数1 参数2]<br>输出内容<br>交互式：<br>% 命令<br>&lt;用户输入&gt;<br>[输出内容]<br>3.简单命令<br>自言自语 echo<br>echo hhhh / echo hello world<br>echo $PWD / echo $HOME / echo ~<br>我在哪 pwd （Print Working Directory）<br>% pwd<br>换个地方 cd (Change Directory)<br>% cd path / % cd ~<br>%cd .. #向上一层<br>瞅瞅 ls(List Directory Contents)<br>% ls<br>% ls -l #list mode<br>% ls -l -a = -la # list + all files<br>% ls -lh # list + human readable size<br>4.寻求帮助<br>用户手册 man (Manual)<br>% man pwd<br>% man man<br>内置帮助 命令 -h<br>% man -h<br>% grep –help<br>面向StackOverflow编程<br>5.文件内容<br>打印文件内容 cat (Concatenate and print files)<br>% cat a.txt<br>% cat a.txt b.txt # print a.txt then b.txt<br>% cat &lt; a.txt # read from stdin<br>头和尾 head and tail<br>% head a.txt<br>% tail a.txt / tail -n 5 a.txt / tail -f a.txt<br>/* -n 表示显示多少行，不加默认为10行； -f 表示实时显示文件内容，如果有变化就会即刻显示<em>/<br>交互浏览 less (readonly version of vi)<br>% less a.txt<br>内容查找 / or grep<br>% man less | grep -n sim<br>单词统计 wc (Word, line and byte count)<br>% man wc | wc<br>6.重定向和管道<br>重定向：改变输入输出设备<br>标准输入(stdin)/标准输出(stdout):控制台/键盘 / 屏幕<br>% echo hello &gt; hello.txt # redirect to a file<br>% echo world &gt;&gt; hello.txt # append to a file<br>//双箭头表示追加<br>% cat &lt; hello.txt # use file as stdin , read from file<br>管道：将前一个命令的标准输出作为下一个程序的标准输入<br>% man less | grep sim<br>% man less | grep -n sim | grep That &gt; that.txt<br>//-n 显示行号<br>7.编写源码<br>% nano [文件名] # 系统自带编译器<br>int main(int argc,char*</em> argv)<br>argc表示命令个数，argv表示命令本身<br>% clang++ 源文件名 -o 目标文件名 # 编译<br>8.运行脚本<br>% cat 文件名<br>显示文件源码</p>
-<p>% python3 my_echo.py hello world # 解释器 脚本文件 [参数]<br>输出执行情况<br>另一种方法运行脚本：<br>Add the following header to my_echo.py<br>#!/usr/bin/env python3 # 指定解释器<br>% chmod +x my_echo.py # 增加可执行权限<br>% ./my_echo.py hello world!# 运行脚本<br>hello world!<br>% mv my_echo.py my_echo # 移动文件（更改文件名）<br>% PATH=$PATH:$PWD # 将当前路径追加到PATH环境变量<br>% {my_}echo hello world!<br>hello world!<br>% which my_echo</p>
-<p>#!/usr/bin/env pyython3<br>Shebang: #! SharpBang or haSHbang # 井惊<br>使用哪个解释器去解释/运行脚本<br>必须放在第一行，并使用绝对路径</p>
-<p>#!/bin/sh<br>#!/bin/bash<br>#!/usr/bin/perl<br>#!/usr/bin/php</p>
-<p>% which python3<br>/Library/Frameworks/Python.framework/Versions/3.8/bin/python3<br>#!/usr/bin/env python3 # 设置环境，并运行python3</p>
-<p>chmod +x<br>chmod: (Change Mode) 改变文件的权限</p>
-<p>% chmod +x foo # 增加可执行权限 / +w +r<br>% chmod -x foo # 移除可执行权限 / -w -r<br>% chmod 740 foo # 把foo的权限设置成740<br>Owner: 7= 1 + 2+ 4 = 可执行 + 可写 + 可读<br>Group: 4 = 4 = 可读<br>Others: 0 = 没有任何权限<br>常见：<br>644 -rw-r–r– # default<br>755 -rwxr-xr-x<br>777 -rwxrwxrwx # 危险！use chown/chgrp instead<br>9.文件基本操作<br>mv: (Move) 移动文件 重命名，剪切+粘贴<br>% mv hwllo.txt hello.txt # 重命名<br>% mv 四六级 大学/英语/ # 移动文件夹</p>
-<p>cp: (Copy) 复制文件<br>% cp a.txt a_copy.txt # 复制单个文件<br>% cp -r dir1 dir2 # 复制文件夹</p>
-<p>Rm: (Remove) 删除文件 没有回收站<br>% rm a.txt # 删除单个文件<br>% rm a.txt b.txt c.txt # 删除多个文件 / rm *.txt<br>% rm -r dir1 # 递归删除dir1和所有子目录/文件</p>
-<p>$PATH 环境变量 + which 命令<br>$PATH: 以：分割的文件夹列表<br>从哪里去找可执行文件（按照文件夹的顺序查找）</p>
-<p>% PATH=$PATH:$PWD # 把当前目录追加到PATH中<br>% echo $PATH<br>…:/Users/xxx/cmd2</p>
-<p>which: locate a program file in user’s path<br>% which my_echo<br>/Users/xxx/cmd2/my_echo<br>% my_echo hello world! # Runs from anywhere<br>Hello world!</p>
+<h2 id="1-攻击特征提取综述"><a href="#1-攻击特征提取综述" class="headerlink" title="1.攻击特征提取综述"></a>1.攻击特征提取综述</h2><h3 id="1-1典型攻击行为"><a href="#1-1典型攻击行为" class="headerlink" title="1.1典型攻击行为"></a>1.1典型攻击行为</h3><p>目前常用攻击手段和方法包括：拒绝服务攻击(Denial of Service)、探测攻击(Probing)、远程用户到本地的非授权访问(Remote to Local user)、非授权获得超级用户权限攻击(User to Root)。<sup>[1]</sup></p>
+<h3 id="1-2特征选择"><a href="#1-2特征选择" class="headerlink" title="1.2特征选择"></a>1.2特征选择</h3><p>传统特征向量通常选取网络通讯中的固有属性。如Cannady选取网络报协议中的部分域值作为特征向量，包含协议类型、端口号、地址等。这些域值易被攻击者干预或伪造，难以达到很好的检测目的。</p>
+<p>之后的特征提取技术得到发展，逐渐加入描述“内容”和“状态“的自定义特征，用以反映某一连接的独特属性。这样的特征可以更全面地反映攻击情况，攻击者也更难以进行伪造，提取出的特征代表性也更好。比如基于KDDCUP’99标准的数据特征提取，其中就将特征分为了基本特征、内容特征等若干类。</p>
+<h2 id="2-生物信息学的序列比对法"><a href="#2-生物信息学的序列比对法" class="headerlink" title="2.生物信息学的序列比对法"></a>2.生物信息学的序列比对法</h2><h3 id="2-1生物信息学背景"><a href="#2-1生物信息学背景" class="headerlink" title="2.1生物信息学背景"></a>2.1生物信息学背景</h3><p>生物学中经常涉及到分子层次的研究，如蛋白质、DNA、RNA等生物大分子。对生物大分子的研究自然离不开对其单体的考察，根据”序列决定结构，结构决定功能“的生物学普遍规律，若是能够在未知的大分子链上找到已知的序列，我们就能推测出这段大分子的功能，序列比对法应运而生。</p>
+<h3 id="2-2序列比对法"><a href="#2-2序列比对法" class="headerlink" title="2.2序列比对法"></a>2.2序列比对法</h3><h6 id="2-2-1序列比对法的基本流程"><a href="#2-2-1序列比对法的基本流程" class="headerlink" title="2.2.1序列比对法的基本流程"></a>2.2.1序列比对法的基本流程</h6><p><img src="/2020/07/05/%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9%E6%B3%95/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg" alt>图一 算法流程图<sup>[2]</sup></p>
+<p>首先通过数据挖掘获取目标报文，然后进行数据预处理，过滤掉正常数据，得到异常的数据，并进行攻击类型分类。分类完成后即可开始比对，产生攻击特征，最后将特征导入数据库。</p>
+<h6 id="2-2-2序列比对法的分类"><a href="#2-2-2序列比对法的分类" class="headerlink" title="2.2.2序列比对法的分类"></a>2.2.2序列比对法的分类</h6><p>按照比对对象分类，可以分为双序列比对和多序列比对。</p>
+<p>按照比对范围分类，则可以分为全局比对和局部比对。</p>
+<h3 id="2-3Needleman-Wunsch-算法"><a href="#2-3Needleman-Wunsch-算法" class="headerlink" title="2.3Needleman-Wunsch 算法"></a>2.3Needleman-Wunsch 算法</h3><h6 id="2-3-1算法基本原理"><a href="#2-3-1算法基本原理" class="headerlink" title="2.3.1算法基本原理"></a>2.3.1算法基本原理</h6><p>Needleman-Wunsch算法是最经典的序列比对算法之一，该算法将整体问题分割为许多子问题，通过对子问题的依次求解来求得最优解。<sup>[3]</sup></p>
+<p>一致度与相似度是刻画待比较序列同源性的两个参数。一致度的计算方法是找出待比较序列中在对应位置与样本序列一致的单体数占总链长的百分比，相似度的计算类似，不过相似度由一个已知的”替换计分矩阵“定义。”替换计分矩阵“定义了不同单体间的相似程度，以具体的”得分“来予以量化。除了单体间的对应得分，还需要考虑长度不够时产生的”空位(gap)“，所以”替换计分矩阵“中往往还会定义”空位“罚分的值。定义完成后，根据序列比对算法，最终会生成一个”得分矩阵“，根据”得分矩阵“进行回溯，就可以得到满足要求的特定相似度的包含空位(gap)的序列，进而进行同源性的进一步研究。</p>
+<p>序列比对法的核心是一个”替换计分矩阵“以及动态规划算法。首先需要提供需要比较的序列，以等长的双核酸序列比较为例。首先定义一个”替换计分矩阵“w(i,j)(如下图)</p>
+<p><img src="/2020/07/05/%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9%E6%B3%95/%E6%9B%BF%E6%8D%A2%E7%A7%AF%E5%88%86%E7%9F%A9%E9%98%B5.jpg" alt="一个简单的替换计分矩阵"><sup>[4]</sup></p>
+<p>其中s(i,j)代表第i行对应碱基与第j列对应碱基的相似得分，而”-“则代表空位(gap)，任何一个碱基与空位对应的罚分均为-5，因空位对空位无实际意义故忽略这种情况。接着得到待比较序列p=ACGTC和q=AATC，长度f分别为n=5,m=4，以他们分别作为第一行和第一列初始化”得分矩阵M“，注意除开左上角的s(0,0)，第一行和第一列都要留出一个空位，如下图：</p>
+<p>![得分矩阵](序列比对法/批注 2020-06-15 095622.jpg)<sup>[5]</sup></p>
+<p>初始化完成后开始填充”得分矩阵“。我们的目的是得到一个相似度最大的序列，如果我们每一步都能得到相似度最大的局部序列，那么将所有的局部序列连成一串所得到的序列就是相似度最大序列。具体的得分规则见下文。</p>
+<p>除去起始行，s(i,j)的得分由三种得分方式的最大值予以确定，分别来自左上s(i-1,j-1)，正上s(I,J-1)，正左s(i-1,j)，具体计分方法见下图：</p>
+<p><img src="/2020/07/05/%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9%E6%B3%95/%E8%AE%A1%E5%88%86%E8%A7%84%E5%88%99.jpg" alt><sup>[6]</sup></p>
+<p>所以第0行与第0列都是一种全部空位的极端情况。</p>
+<p>![](序列比对法/批注 2020-06-16 152726.jpg)<sup>[7]</sup></p>
+<p>理论上主对角线是两条序列一一对齐的情况，但是由于序列长度不一，同时“强行”对齐的相似度不一定比的过“空出这位”转而与下一个单体匹配的相似度高，所以加入了行列的正向位移。所以得分矩阵的每一点都遇到三个选择：</p>
+<p>①i行不变，空出j列去和j+1列匹配；②j列不变，空出i行去和i+1行匹配；③i行与j列匹配。其实际物理意义就是序列p的第i个单体选择与序列q剩余单体中何者匹配的问题。</p>
+<p>而我们采用动态规划的思想，假设每一步都已经得到了最佳的结果，进而逆推上一步采取的何种匹配策略。</p>
+<p>确定得分策略后，我们需要做出标记，为最后得出全局最优解做准备。标记的普遍方式就是采用箭头指向上一步的最高分来源：</p>
+<p>![](序列比对法/批注 2020-06-16 152742.jpg)<sup>[8]</sup></p>
+<p>得分矩阵填满后，最右下角的分数就是整个全局比对的最终得分。以此为起点，依照箭头指向进行回溯，直到最左上角的0，整条路径就是双序列比对的相似度最优解。</p>
+<p>![](序列比对法/批注 2020-06-16 153259.jpg)</p>
+<p><sup>[9]</sup></p>
+<p>最终结果如下：</p>
+<p>![](序列比对法/批注 2020-06-16 153312.jpg)<sup>[10]</sup></p>
+<h6 id="2-3-2算法不足"><a href="#2-3-2算法不足" class="headerlink" title="2.3.2算法不足"></a>2.3.2算法不足</h6><p>Needleman-Wusch序列比对算法的比对结果中，相似度最大的序列结果不一定代表攻击特征提取所需要的最优特征表达。原因在于连续的片段往往可能含有语义信息，而随机的空位插入则破坏了这类信息。[11]</p>
+<h6 id="2-3-3知识积累的序列比对算法IASA"><a href="#2-3-3知识积累的序列比对算法IASA" class="headerlink" title="2.3.3知识积累的序列比对算法IASA"></a>2.3.3知识积累的序列比对算法IASA</h6><p>该算法是在Needleman-Wusch算法之上改进而成的。传统序列比对算法中相似度量函数缺乏对于实际情况的适应，因此可以可以统计相似序列比对中的各种替换发生率而得到新的打分矩阵p(i,j)作为知识积累得分，并在原来的相似度量函数中加上知识积累得分。新的得分矩阵：</p>
+<p>S(i,j)=s(i,j)+p(i,j).</p>
+<p>其中p(i,j)为对应元素的知识积累得分，该数据可以经过统计该种替换发生率来得到。</p>
+<p><img src="/2020/07/05/%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9%E6%B3%95/IASA1.png" alt></p>
+<h2 id="3-结语"><a href="#3-结语" class="headerlink" title="3.结语"></a>3.结语</h2><p>我们要提取攻击特征，就是要在不同的报文段中分离出相同或是相似的片段，这种行为与生物信息学中寻找不同序列中的相同处有异曲同工之妙。运用序列比对算法，实际就是找寻两片段相似度最高的一种可能排列，</p>
+<p>Needleman-Wusch算法提供了一种枚举的可能，那就是找出每一步的最佳方法，依次进行直到问题结束，最后所得的总方法就是全局最优解。这个算法巧妙地融汇了动态规划的原理，极大降低了问题的逻辑复杂度，不愧是序列比对算法的基础。</p>
+<blockquote>
+<p>参考资料</p>
+<p>[1].尹毅.基于序列比对的特征自动提取关键技术研究[D].湖南：湖南大学,2008</p>
+<p>[2].蒲天银等.基于多序列比对的网络攻击特征数据提取算法分析[J].西南师范大学学报（自然科学版）,2015,(7)：113-118</p>
+<p>[3].山东大学基础医学院生物信息学课题组.生物信息学MOOC[EB/OL].山东：山东大学,2020</p>
+<p>[4].山东大学基础医学院生物信息学课题组.生物信息学MOOC[EB/OL].山东：山东大学,2020</p>
+<p>[5].山东大学基础医学院生物信息学课题组.生物信息学MOOC[EB/OL].山东：山东大学,2020</p>
+<p>[6].山东大学基础医学院生物信息学课题组.生物信息学MOOC[EB/OL].山东：山东大学,2020</p>
+<p>[7].山东大学基础医学院生物信息学课题组.生物信息学MOOC[EB/OL].山东：山东大学,2020</p>
+<p>[8].山东大学基础医学院生物信息学课题组.生物信息学MOOC[EB/OL].山东：山东大学,2020</p>
+<p>[9].山东大学基础医学院生物信息学课题组.生物信息学MOOC[EB/OL].山东：山东大学,2020</p>
+<p>[10].山东大学基础医学院生物信息学课题组.生物信息学MOOC[EB/OL].山东：山东大学,2020</p>
+</blockquote>
 
       
       <!-- reward -->
@@ -188,14 +221,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nekocharm111.github.io/2020/05/31/Linux-GLI/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://nekocharm111.github.io/2020/07/05/%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E2%80%9C%E7%AE%97%E6%B3%95%E2%80%9D/" rel="tag">“算法”</a></li></ul>
 
 
     </footer>
@@ -206,19 +239,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/07/05/%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9%E6%B3%95/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            序列比对法
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/05/31/JS-notes/" class="article-nav-link">
+      <a href="/2020/05/31/Linux-GLI/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">JS_notes</div>
+        <div class="article-nav-title">Linux_GLI</div>
       </a>
     
   </nav>
